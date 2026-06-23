@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lesson 12 - Your supplement guide: Whey protein | GetFit AF</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Arial, sans-serif; background: #f2f2f2; color: #222; }
+
+  .topbar { background: #e8552e; padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; }
+  .topbar-brand { color: #fff; font-size: 20px; font-weight: 700; letter-spacing: -0.3px; }
+  .topbar-label { color: #ffd4c8; font-size: 13px; }
+  .topbar-right { text-align: right; }
+  .topbar-back { color: #ffd4c8; font-size: 11px; text-decoration: none; opacity: 0.85; display: block; margin-top: 4px; }
+  .topbar-back:hover { opacity: 1; }
+
+  .container { max-width: 680px; margin: 40px auto; padding: 0 20px 60px; }
+  .lesson-meta { font-size: 12px; font-weight: 700; color: #e8552e; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
+  .lesson-title { font-size: 28px; font-weight: 700; color: #1a1a1a; line-height: 1.25; margin-bottom: 32px; }
+
+  .card { background: #fff; border-radius: 8px; padding: 36px 40px; box-shadow: 0 2px 8px rgba(0,0,0,0.07); margin-bottom: 24px; }
+  p { font-size: 16px; line-height: 1.75; color: #333; margin-bottom: 18px; }
+  p:last-child { margin-bottom: 0; }
+  h3 { font-size: 18px; font-weight: 700; color: #1a1a1a; margin-bottom: 12px; margin-top: 28px; }
+  h3:first-child { margin-top: 0; }
+
+  .list-box { background: #f7f7f7; border-left: 3px solid #ccc; padding: 16px 20px; border-radius: 0 6px 6px 0; margin: 8px 0 20px; }
+  .list-box ul { list-style: none; padding: 0; margin: 0; }
+  .list-box ul li { font-size: 15px; color: #555; line-height: 1.7; padding: 5px 0 5px 16px; position: relative; }
+  .list-box ul li::before { content: "-"; position: absolute; left: 0; color: #bbb; }
+  .list-box p { font-size: 15px; color: #555; margin-bottom: 10px; }
+  .list-box p:last-child { margin-bottom: 0; }
+
+  .callout { background: #f5f0eb; border-left: 4px solid #e8552e; padding: 18px 22px; border-radius: 0 6px 6px 0; margin: 20px 0; }
+  .callout p { font-size: 15px; color: #444; margin: 0 0 10px; line-height: 1.7; }
+  .callout p:last-child { margin: 0; }
+  .callout a { color: #e8552e; font-weight: 700; text-decoration: none; }
+
+  .takeaway { background: #f5f0eb; border-left: 4px solid #e8552e; padding: 18px 22px; border-radius: 0 6px 6px 0; margin: 24px 0 0; }
+  .takeaway p { font-size: 15px; color: #444; margin: 0; }
+
+  .divider { border: none; border-top: 2px solid #f0f0f0; margin: 28px 0; }
+  .signoff p { font-size: 15px; color: #555; line-height: 1.7; }
+</style>
+  <!-- Auth Guard -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+  <script>
+    (async () => {
+      const db = window.supabase.createClient(
+        'https://zxuuyzhbryelekousbsw.supabase.co',
+        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inp4dXV5emhicnllbGVrb3VzYnN3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODE1NDE1MTcsImV4cCI6MjA5NzExNzUxN30.JPwlX_8KQ6DmQFur0B7jn8HUbrY9o0m43N4MGJgjdJY'
+      );
+      const { data: { session } } = await db.auth.getSession();
+      if (!session) { window.location.href = '/login.html'; return; }
+      const { data: profile } = await db.from('profiles').select('approved,is_admin').eq('id', session.user.id).single();
+      if (!profile?.approved && !profile?.is_admin) { window.location.href = '/dashboard.html'; }
+    })();
+  </script>
+</head>
+<body>
+
+<div class="topbar">
+  <span class="topbar-brand">GetFit AF</span>
+  <div class="topbar-right">
+    <span class="topbar-label">Your daily lesson</span>
+    <a href="https://learn.getfitaf.fitness" class="topbar-back">&#8592; Back to dashboard</a>
+  </div>
+</div>
+
+<div class="container">
+
+  <p class="lesson-meta">Lesson 12</p>
+  <h1 class="lesson-title">Your supplement guide - Part 1: Whey protein</h1>
+
+  <!-- Form intro -->
+  <div class="callout">
+    <p>We've put together a short supplement questionnaire to help us understand your current habits and give you direction on what supplements might be worth adding for you specifically. Fill it in as you go through this series.</p>
+    <p><a href="https://forms.getfitaf.fitness/supplement-questionnaire">&#8594; Take the supplement questionnaire</a></p>
+  </div>
+
+  <div class="card">
+    <h3>What supplements actually are</h3>
+    <p>Supplements supplement your current nutrition. That's it. Good, balanced meals and consistent exercise still remain your number one priority. Adding supplements doesn't mean you can ignore these foundations.</p>
+    <p>This is also not a doctor's recommendation. If you have any existing health conditions, please speak to your doctor before adding any supplement. And if you're ever unsure whether something is right for you, reach out to us - we can help you work through it.</p>
+
+    <hr class="divider">
+
+    <h3>What we typically recommend</h3>
+    <p>Across this three-part series, we'll cover the supplements we commonly suggest at GetFit AF:</p>
+
+    <div class="list-box">
+      <ul>
+        <li>Whey protein (or any protein powder)</li>
+        <li>Omega-3 / fish oil</li>
+        <li>Vitamin D3</li>
+        <li>A good multivitamin</li>
+        <li>Creatine</li>
+      </ul>
+    </div>
+
+    <hr class="divider">
+
+    <h3>Whey protein</h3>
+    <p>Whey protein is not harmful. It's a very safe supplement - and one of the most useful, because a lot of people, especially in Indian households, are nowhere near the recommended daily protein intake.</p>
+    <p>The target I usually recommend: <strong>1.8 to 2.2g of protein per kg of body weight per day.</strong></p>
+    <p>Most of us are getting less than 0.8g per kg. To put that in context - 0.8g per kg is the minimum needed just to avoid malnutrition. Most of us aren't even meeting that. So the gap is significant, and whey protein is one of the most practical ways to close it.</p>
+
+    <h3>Types of whey protein</h3>
+    <p>Whey protein comes in a few forms. Here's what to know:</p>
+
+    <div class="list-box">
+      <ul>
+        <li><strong>Whey Protein Concentrate</strong> - the most common form; works well for most people</li>
+        <li><strong>Whey Protein Isolate</strong> - lower in lactose; a better choice if you feel bloated or uncomfortable on concentrate</li>
+        <li><strong>Whey Protein Hydrolysate</strong> - pre-digested and easiest on the stomach; good option if isolate still causes issues</li>
+      </ul>
+    </div>
+
+    <p>If none of these sit well with you, a plant-based protein powder is a perfectly good alternative. If you're not sure which option to go with, reach out to your coach and we'll help you decide.</p>
+
+    <div class="callout">
+      <p><strong>Always look for third-party certifications</strong> when buying any protein product - it ensures you're getting what the label says.</p>
+    </div>
+
+    <hr class="divider">
+
+    <h3>A note on protein bars</h3>
+    <p>Protein bars are not the same as protein powder. A lot of them are glorified chocolates dressed up in fitness packaging.</p>
+    <p>The rule to follow: look for at least a <strong>1:10 protein-to-calorie ratio</strong>. If a bar has 20g of protein, the maximum it should have is around 200 calories. Many bars give you only 10g of protein for close to 250 calories - that's well below 1:10, which means they're not really a protein source worth counting on.</p>
+    <p>That being said, swapping a regular chocolate for a protein bar once in a while is still a reasonable choice - just make sure the protein to calorie ratio is there.</p>
+
+    <hr class="divider">
+
+    <h3>When to take whey protein</h3>
+    <p>There's a common misconception that you need to rush and drink a shake immediately after your workout, or the benefits disappear. That's not true. You can have whey protein at any point throughout the day.</p>
+
+    <div class="list-box">
+      <p><strong>One situation where timing does matter:</strong> If you're training on a completely empty stomach, there are no free-flowing amino acids available for your muscles to use. Having a scoop of protein before that workout can give a small boost to the muscle-building stimulus. Even so, the effect is minor - don't stress about it.</p>
+    </div>
+
+    <p>Another situation: if you already have a good protein source in your meal in sufficient quantities, it's a good idea to space your protein powder out and have it at least one to two hours later.</p>
+    <p>That said, the most important thing is simply hitting your daily protein target. Total intake matters far more than exact timing.</p>
+
+    <div class="takeaway">
+      <p><strong>Today's takeaway:</strong> Supplements work on top of good nutrition and exercise - not instead of them. If your protein intake is consistently low, whey protein is one of the most practical ways to bridge that gap.</p>
+    </div>
+  </div>
+
+  <!-- Form reminder - bottom -->
+  <div class="callout">
+    <p>Take a few minutes to fill out the supplement questionnaire - it helps us give you more personalised guidance on what's worth adding to your routine.</p>
+    <p><a href="https://forms.getfitaf.fitness/supplement-questionnaire">&#8594; Take the supplement questionnaire</a></p>
+  </div>
+  <!-- Mark Complete -->
+  <div id="complete-wrap" style="background:#fff;border-radius:8px;padding:24px 32px;box-shadow:0 2px 8px rgba(0,0,0,0.07);display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:24px;">
+    <div>
+      <p style="font-size:15px;font-weight:700;color:#1a1a1a;margin-bottom:4px;">Done with today's lesson?</p>
+      <p style="font-size:13px;color:#888;margin:0;">Mark it complete so we can track your progress.</p>
+    </div>
+    <button id="complete-btn"
+      style="background:#e8552e;color:#fff;font-size:14px;font-weight:700;padding:12px 24px;border-radius:6px;border:none;cursor:pointer;white-space:nowrap;">
+      Mark as complete
+    </button>
+  </div>
+  <script>
+  (async () => {
+    const LESSON_ORDER = 12;
+    const _db = window.supabase.createClient('https://zxuuyzhbryelekousbsw.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inp4dXV5emhicnllbGVrb3VzYnN3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODE1NDE1MTcsImV4cCI6MjA5NzExNzUxN30.JPwlX_8KQ6DmQFur0B7jn8HUbrY9o0m43N4MGJgjdJY');
+    const { data: { session } } = await _db.auth.getSession();
+    if (!session) return;
+    const { data: lesson } = await _db.from('lessons').select('id').eq('order', LESSON_ORDER).single();
+    if (!lesson) return;
+    const lessonId = lesson.id;
+    const { data: progress } = await _db.from('user_progress')
+      .select('completed').eq('user_id', session.user.id).eq('lesson_id', lessonId).single();
+    if (progress && progress.completed) showDone();
+    document.getElementById('complete-btn').addEventListener('click', async () => {
+      const btn = document.getElementById('complete-btn');
+      btn.disabled = true; btn.textContent = '...';
+      await _db.from('user_progress').upsert(
+        { user_id: session.user.id, lesson_id: lessonId, completed: true, completed_at: new Date().toISOString() },
+        { onConflict: 'user_id,lesson_id' }
+      );
+      showDone();
+    });
+    function showDone() {
+      const btn = document.getElementById('complete-btn');
+      if (btn) btn.outerHTML = '<span style="color:#22c55e;font-weight:700;font-size:14px;">&#10003; Lesson complete!</span>';
+    }
+  })();
+  </script>
+
+  <div class="card signoff">
+    <p>Talk soon,<br><strong>Satish</strong><br><span style="color:#888;font-size:13px;">GetFit AF</span></p>
+  </div>
+
+</div>
+  <script>
+  // Append user name+email to form links so forms are pre-filled
+  (async () => {
+    const _fdb = window.supabase.createClient('https://zxuuyzhbryelekousbsw.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inp4dXV5emhicnllbGVrb3VzYnN3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODE1NDE1MTcsImV4cCI6MjA5NzExNzUxN30.JPwlX_8KQ6DmQFur0B7jn8HUbrY9o0m43N4MGJgjdJY');
+    const { data: { session } } = await _fdb.auth.getSession();
+    if (!session) return;
+    const email = session.user.email || '';
+    const { data: profile } = await _fdb.from('profiles').select('full_name').eq('id', session.user.id).single();
+    const name = profile?.full_name || '';
+    if (!name && !email) return;
+    const params = new URLSearchParams();
+    if (name)  params.set('name',  name);
+    if (email) params.set('email', email);
+    document.querySelectorAll('a[href*="forms.getfitaf.fitness"]').forEach(a => {
+      const base = a.href.split('?')[0];
+      a.href = base + '?' + params.toString();
+    });
+  })();
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lesson 5 - How to Actually Measure Your Weight | GetFit AF</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Arial, sans-serif; background: #f2f2f2; color: #222; }
+
+  .topbar { background: #e8552e; padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; }
+  .topbar-brand { color: #fff; font-size: 20px; font-weight: 700; letter-spacing: -0.3px; }
+  .topbar-label { color: #ffd4c8; font-size: 13px; }
+  .topbar-right { text-align: right; }
+  .topbar-back { color: #ffd4c8; font-size: 11px; text-decoration: none; opacity: 0.85; display: block; margin-top: 4px; }
+  .topbar-back:hover { opacity: 1; }
+
+  .container { max-width: 680px; margin: 40px auto; padding: 0 20px 60px; }
+  .lesson-meta { font-size: 12px; font-weight: 700; color: #e8552e; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
+  .lesson-title { font-size: 28px; font-weight: 700; color: #1a1a1a; line-height: 1.25; margin-bottom: 32px; }
+
+  .card { background: #fff; border-radius: 8px; padding: 36px 40px; box-shadow: 0 2px 8px rgba(0,0,0,0.07); margin-bottom: 24px; }
+  p { font-size: 16px; line-height: 1.75; color: #333; margin-bottom: 18px; }
+  p:last-child { margin-bottom: 0; }
+  h3 { font-size: 18px; font-weight: 700; color: #1a1a1a; margin-bottom: 12px; margin-top: 8px; }
+
+  .exception-box { background: #f7f7f7; border-left: 3px solid #ccc; padding: 16px 20px; border-radius: 0 6px 6px 0; margin: 8px 0 20px; }
+  .exception-box ul { list-style: none; padding: 0; margin: 0; }
+  .exception-box ul li { font-size: 15px; color: #555; line-height: 1.7; padding: 4px 0; padding-left: 14px; position: relative; }
+  .exception-box ul li::before { content: "-"; position: absolute; left: 0; color: #999; }
+
+  .scenario-label { font-size: 11px; font-weight: 700; color: #e8552e; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+
+  .bold-statement { font-size: 19px; font-weight: 700; color: #1a1a1a; line-height: 1.4; margin: 4px 0 20px; }
+
+  .takeaway { background: #f5f0eb; border-left: 4px solid #e8552e; padding: 18px 22px; border-radius: 0 6px 6px 0; margin: 24px 0 0; }
+  .takeaway p { font-size: 15px; color: #444; margin: 0; }
+
+  .signoff p { font-size: 15px; color: #555; line-height: 1.7; }
+
+  .divider { border: none; border-top: 2px solid #f0f0f0; margin: 28px 0; }
+</style>
+  <!-- Auth Guard -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+  <script>
+    (async () => {
+      const db = window.supabase.createClient(
+        'https://zxuuyzhbryelekousbsw.supabase.co',
+        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inp4dXV5emhicnllbGVrb3VzYnN3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODE1NDE1MTcsImV4cCI6MjA5NzExNzUxN30.JPwlX_8KQ6DmQFur0B7jn8HUbrY9o0m43N4MGJgjdJY'
+      );
+      const { data: { session } } = await db.auth.getSession();
+      if (!session) { window.location.href = '/login.html'; return; }
+      const { data: profile } = await db.from('profiles').select('approved,is_admin').eq('id', session.user.id).single();
+      if (!profile?.approved && !profile?.is_admin) { window.location.href = '/dashboard.html'; }
+    })();
+  </script>
+</head>
+<body>
+
+<div class="topbar">
+  <span class="topbar-brand">GetFit AF</span>
+  <div class="topbar-right">
+    <span class="topbar-label">Your daily lesson</span>
+    <a href="https://learn.getfitaf.fitness" class="topbar-back">&#8592; Back to dashboard</a>
+  </div>
+</div>
+
+<div class="container">
+
+  <p class="lesson-meta">Lesson 7</p>
+  <h1 class="lesson-title">How to actually measure your weight</h1>
+
+  <div class="card">
+    <p>Yesterday I mentioned that the number you see on the scale each morning is probably not telling you the full truth.</p>
+    <p>Here's what I mean.</p>
+
+    <h3>Your weight fluctuates. Every single day.</h3>
+    <p>If you step on the scale and see a spike, that spike could be because of any of these:</p>
+
+    <div class="exception-box">
+      <ul>
+        <li>You ate a few extra carbs yesterday</li>
+        <li>You had more stress than usual</li>
+        <li>You haven't cleared your stomach yet</li>
+        <li>You didn't get enough sleep</li>
+        <li>You had a bit of extra sodium in yesterday's meal</li>
+      </ul>
+    </div>
+
+    <p>And to be honest, there could be 20 other reasons you're not even aware of.</p>
+    <p>This is why measuring weight once a week or once every two weeks can genuinely puzzle you. That one day's number could be anything.</p>
+
+    <hr class="divider">
+
+    <h3>Here's what I recommend instead.</h3>
+    <p>Check your weight every day, at the same time, in similar clothing - ideally right after you wake up and clear your stomach. Then take a weekly average. As long as your weekly average is trending downward over time, you don't have anything to worry about. Don't give so much importance to a single day's number.</p>
+    <p>There are two scenarios here.</p>
+
+    <hr class="divider">
+
+    <p class="scenario-label">Scenario 1</p>
+    <h3>You went off track - badly.</h3>
+    <p>You had a wedding. An office party. A late night with biryani and desserts and no willpower in sight. You wake up the next morning and see a 2 kg or 3 kg spike on the scale.</p>
+    <p>This is the moment a lot of people go into extreme restriction mode. They fast the next day, or live on salads, which puts them into a very restrictive state of mind. And when you restrict that hard, you give in eventually - because it's not sustainable and your body is constantly craving things. That triggers the exact cycle of overeating and undereating we talked about earlier.</p>
+    <p>Here's the truth about that 3 kg spike: to actually gain 3 kg of fat, you would have needed to eat roughly 22,000 to 23,000 calories above what you normally eat in a day. That is almost impossible to do in one sitting. What you're seeing on the scale is almost entirely water weight, and it will eventually go away on its own.</p>
+    <p>All you need to do the day after you deviate from your diet is get back to your usual way of doing things. That's it.</p>
+
+    <div class="exception-box">
+      <ul>
+        <li>Don't think you've wasted all your progress and there's no point continuing.</li>
+        <li>Don't go into a downward spiral.</li>
+        <li>Don't sabotage your own journey.</li>
+      </ul>
+    </div>
+
+    <p>Remember what we spoke about when we started - momentum is everything. And it's very easy to gain back momentum if you just take one step at a time.</p>
+
+    <hr class="divider">
+
+    <p class="scenario-label">Scenario 2</p>
+    <h3>You did everything right - and the scale still spiked.</h3>
+    <p>This happens. And when it does, most people panic. But there are so many reasons this could be happening, and many of them have nothing to do with what you ate. Stress, sleep, sodium, your cycle if you're a woman, even the time of day you weighed yourself.</p>
+    <p>Do not worry about this number. It is almost certainly water weight, and it will come back down over the next few days. Keep doing what you're doing.</p>
+
+    <div class="takeaway">
+      <p><strong>Today's takeaway:</strong> Don't measure your weight on any single day - measure the trend over time. Weigh yourself daily, take a weekly average, and only worry if that average is consistently going in the wrong direction.</p>
+    </div>
+  </div>
+  <!-- Mark Complete -->
+  <div id="complete-wrap" style="background:#fff;border-radius:8px;padding:24px 32px;box-shadow:0 2px 8px rgba(0,0,0,0.07);display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:24px;">
+    <div>
+      <p style="font-size:15px;font-weight:700;color:#1a1a1a;margin-bottom:4px;">Done with today's lesson?</p>
+      <p style="font-size:13px;color:#888;margin:0;">Mark it complete so we can track your progress.</p>
+    </div>
+    <button id="complete-btn"
+      style="background:#e8552e;color:#fff;font-size:14px;font-weight:700;padding:12px 24px;border-radius:6px;border:none;cursor:pointer;white-space:nowrap;">
+      Mark as complete
+    </button>
+  </div>
+  <script>
+  (async () => {
+    const LESSON_ORDER = 7;
+    const _db = window.supabase.createClient('https://zxuuyzhbryelekousbsw.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inp4dXV5emhicnllbGVrb3VzYnN3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODE1NDE1MTcsImV4cCI6MjA5NzExNzUxN30.JPwlX_8KQ6DmQFur0B7jn8HUbrY9o0m43N4MGJgjdJY');
+    const { data: { session } } = await _db.auth.getSession();
+    if (!session) return;
+    const { data: lesson } = await _db.from('lessons').select('id').eq('order', LESSON_ORDER).single();
+    if (!lesson) return;
+    const lessonId = lesson.id;
+    const { data: progress } = await _db.from('user_progress')
+      .select('completed').eq('user_id', session.user.id).eq('lesson_id', lessonId).single();
+    if (progress && progress.completed) showDone();
+    document.getElementById('complete-btn').addEventListener('click', async () => {
+      const btn = document.getElementById('complete-btn');
+      btn.disabled = true; btn.textContent = '...';
+      await _db.from('user_progress').upsert(
+        { user_id: session.user.id, lesson_id: lessonId, completed: true, completed_at: new Date().toISOString() },
+        { onConflict: 'user_id,lesson_id' }
+      );
+      showDone();
+    });
+    function showDone() {
+      const btn = document.getElementById('complete-btn');
+      if (btn) btn.outerHTML = '<span style="color:#22c55e;font-weight:700;font-size:14px;">&#10003; Lesson complete!</span>';
+    }
+  })();
+  </script>
+
+  <div class="card signoff">
+    <p>Talk soon,<br><strong>Satish</strong><br><span style="color:#888;font-size:13px;">GetFit AF</span></p>
+  </div>
+
+</div>
+</body>
+</html>

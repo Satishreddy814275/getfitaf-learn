@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lesson 5 - Protein Sources, How Much to Eat, and What to Look For | GetFit AF</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Arial, sans-serif; background: #f2f2f2; color: #222; }
+
+  .topbar { background: #e8552e; padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; }
+  .topbar-brand { color: #fff; font-size: 20px; font-weight: 700; letter-spacing: -0.3px; }
+  .topbar-label { color: #ffd4c8; font-size: 13px; }
+  .topbar-right { text-align: right; }
+  .topbar-back { color: #ffd4c8; font-size: 11px; text-decoration: none; opacity: 0.85; display: block; margin-top: 4px; }
+  .topbar-back:hover { opacity: 1; }
+
+  .container { max-width: 680px; margin: 40px auto; padding: 0 20px 60px; }
+  .lesson-meta { font-size: 12px; font-weight: 700; color: #e8552e; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
+  .lesson-title { font-size: 28px; font-weight: 700; color: #1a1a1a; line-height: 1.25; margin-bottom: 32px; }
+
+  .card { background: #fff; border-radius: 8px; padding: 36px 40px; box-shadow: 0 2px 8px rgba(0,0,0,0.07); margin-bottom: 24px; }
+  p { font-size: 16px; line-height: 1.75; color: #333; margin-bottom: 18px; }
+  p:last-child { margin-bottom: 0; }
+  h3 { font-size: 18px; font-weight: 700; color: #1a1a1a; margin-bottom: 12px; margin-top: 28px; }
+  h3:first-child { margin-top: 0; }
+
+  .list-box { background: #f7f7f7; border-left: 3px solid #ccc; padding: 16px 20px; border-radius: 0 6px 6px 0; margin: 8px 0 20px; }
+  .list-box ul { list-style: none; padding: 0; margin: 0; }
+  .list-box ul li { font-size: 15px; color: #555; line-height: 1.7; padding: 4px 0 4px 16px; position: relative; }
+  .list-box ul li::before { content: "-"; position: absolute; left: 0; color: #999; }
+  .list-box .note { font-size: 13px; color: #999; font-style: italic; margin-left: 16px; }
+
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 8px 0 20px; }
+  .col-box { background: #f7f7f7; border-left: 3px solid #ccc; padding: 16px 20px; border-radius: 0 6px 6px 0; }
+  .col-box .col-label { font-size: 12px; font-weight: 700; color: #888; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 10px; }
+  .col-box ul { list-style: none; padding: 0; margin: 0; }
+  .col-box ul li { font-size: 14px; color: #555; line-height: 1.7; padding: 3px 0 3px 14px; position: relative; }
+  .col-box ul li::before { content: "-"; position: absolute; left: 0; color: #bbb; }
+  @media (max-width: 500px) { .two-col { grid-template-columns: 1fr; } }
+
+  .brand-section { margin: 8px 0 20px; }
+  .brand-label { font-size: 13px; font-weight: 700; color: #555; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.4px; }
+  .brand-list { background: #f7f7f7; border-left: 3px solid #ccc; padding: 12px 18px; border-radius: 0 6px 6px 0; margin-bottom: 14px; }
+  .brand-list ul { list-style: none; padding: 0; margin: 0; }
+  .brand-list ul li { font-size: 15px; color: #444; line-height: 1.7; padding: 3px 0 3px 16px; position: relative; }
+  .brand-list ul li::before { content: "-"; position: absolute; left: 0; color: #bbb; }
+  .brand-list ul li .partner-note { font-size: 13px; color: #999; display: block; padding-left: 0; }
+
+  .protein-calc { background: #1a1a1a; border-radius: 8px; padding: 24px 28px; margin: 16px 0 20px; }
+  .protein-calc .calc-label { font-size: 11px; font-weight: 700; color: #e8552e; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
+  .protein-calc label { display: block; font-size: 13px; color: #ffd4c8; margin-bottom: 8px; }
+  .calc-row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+  .calc-row input { flex: 1; min-width: 110px; padding: 11px 14px; border-radius: 6px; border: none; font-size: 16px; font-family: Arial, sans-serif; color: #222; outline: none; }
+  .calc-row input:focus { box-shadow: 0 0 0 3px rgba(232,85,46,0.4); }
+  .calc-unit { color: #fff; font-size: 14px; font-weight: 600; }
+  .calc-result { margin-top: 14px; background: #e8552e; border-radius: 6px; padding: 14px 18px; display: none; }
+  .calc-result.visible { display: block; }
+  .calc-result p { margin: 0; font-size: 15px; color: #fff; font-weight: 600; line-height: 1.6; }
+  .calc-result span { font-size: 20px; font-weight: 700; }
+
+  .palm-box { background: #1a1a1a; border-radius: 8px; padding: 22px 24px; margin: 16px 0 20px; }
+  .palm-box .palm-label { font-size: 11px; font-weight: 700; color: #e8552e; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+  .palm-box p { color: #f0f0f0; font-size: 15px; margin-bottom: 0; line-height: 1.7; }
+
+  .takeaway { background: #f5f0eb; border-left: 4px solid #e8552e; padding: 18px 22px; border-radius: 0 6px 6px 0; margin: 24px 0 0; }
+  .takeaway p { font-size: 15px; color: #444; margin: 0; }
+
+  .divider { border: none; border-top: 2px solid #f0f0f0; margin: 28px 0; }
+  .signoff p { font-size: 15px; color: #555; line-height: 1.7; }
+</style>
+  <!-- Auth Guard -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+  <script>
+    (async () => {
+      const db = window.supabase.createClient(
+        'https://zxuuyzhbryelekousbsw.supabase.co',
+        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inp4dXV5emhicnllbGVrb3VzYnN3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODE1NDE1MTcsImV4cCI6MjA5NzExNzUxN30.JPwlX_8KQ6DmQFur0B7jn8HUbrY9o0m43N4MGJgjdJY'
+      );
+      const { data: { session } } = await db.auth.getSession();
+      if (!session) { window.location.href = '/login.html'; return; }
+      const { data: profile } = await db.from('profiles').select('approved,is_admin').eq('id', session.user.id).single();
+      if (!profile?.approved && !profile?.is_admin) { window.location.href = '/dashboard.html'; }
+    })();
+  </script>
+</head>
+<body>
+
+<div class="topbar">
+  <span class="topbar-brand">GetFit AF</span>
+  <div class="topbar-right">
+    <span class="topbar-label">Your daily lesson</span>
+    <a href="https://learn.getfitaf.fitness" class="topbar-back">&#8592; Back to dashboard</a>
+  </div>
+</div>
+
+<div class="container">
+
+  <p class="lesson-meta">Lesson 5 - Part 2</p>
+  <h1 class="lesson-title">Protein sources, how much to eat, and what to look for</h1>
+
+  <div class="card">
+    <p>Yesterday I walked you through why protein matters. Today let's get into the practical side - what to eat, how much, and what to actually look for on a label.</p>
+
+    <h3>What counts as a protein source?</h3>
+    <p>Most foods are a combination of all three macronutrients - protein, carbs, and fats. We label something as a protein source when it has more protein than fats or carbs.</p>
+    <p>You'll see a lot of foods marketed as "high protein" - but not all of them actually are. Flip the packet over, or Google the food, and check the breakdown. If it has more carbs and fats than protein, it's not really a protein source regardless of what the packaging says.</p>
+    <p style="font-size:14px;font-weight:700;color:#555;margin-bottom:8px;">Here are some great protein sources:</p>
+    <div class="list-box">
+      <ul>
+        <li>Meat - chicken, fish, mutton, and similar</li>
+        <li>Eggs</li>
+        <li>Paneer <span class="note">(one of the best options if you're vegetarian)</span></li>
+        <li>Beans - chickpeas, kidney beans, black-eyed peas</li>
+        <li>Some lentils - moong dal is a great example</li>
+        <li>Soya chunks <span class="note">(also called meal maker)</span></li>
+        <li>Tofu</li>
+        <li>Tempeh</li>
+        <li>Greek yogurt</li>
+        <li>Protein supplements - whey or plant-based</li>
+      </ul>
+    </div>
+    <p>This isn't an exhaustive list. There are plenty of other options out there.</p>
+
+    <hr class="divider">
+
+    <h3>Lean protein - why it matters on a fat loss journey</h3>
+    <p>When you're trying to lose fat, choosing lean protein sources is going to serve you much better. A lean protein is simply a protein source that comes with fewer overall calories - meaning you get the protein without a lot of extra fat or carbs alongside it.</p>
+
+    <div class="two-col">
+      <div class="col-box">
+        <div class="col-label">For non-vegetarians</div>
+        <ul>
+          <li>Chicken breast</li>
+          <li>Egg whites</li>
+          <li>Lean fish - salmon, tuna, rohu, katla, tilapia</li>
+        </ul>
+      </div>
+      <div class="col-box">
+        <div class="col-label">For vegetarians</div>
+        <ul>
+          <li>Soya chunks</li>
+          <li>Tofu</li>
+          <li>Tempeh</li>
+          <li>Greek yogurt</li>
+        </ul>
+      </div>
+    </div>
+
+    <p>Both can also use a protein supplement. If you're vegan, a plant-based option works well here.</p>
+
+    <hr class="divider">
+
+    <h3>A quick note on protein supplements</h3>
+    <p>Whey protein is not a steroid. It is not harmful. It is not "unnatural."</p>
+    <p>Many people avoid whey protein because it is "unnatural." But they go ahead and have all the chocolates in the world &#128514;</p>
+    <p style="font-size:14px;font-weight:700;color:#555;margin-bottom:8px;">Two situations where you'd want to be careful:</p>
+    <div class="list-box">
+      <ul>
+        <li>If you don't tolerate dairy well, or are lactose intolerant - go for a plant-based protein powder instead</li>
+        <li>If you have any kidney issues - check with your doctor first</li>
+      </ul>
+    </div>
+    <p>One more thing: if you are relying too much on protein powder, you will miss out on the vitamins and minerals that come with whole food protein sources. Use it as a supplement to a varied diet, not a replacement for one.</p>
+
+    <hr class="divider">
+
+    <h3>Which brand should you choose?</h3>
+    <p>Look for something that is third-party tested. This means an independent body has verified that what's on the label is actually what's in the product. Labdoor, ConsumerLab, and NSF are three places you can check.</p>
+
+    <div class="brand-section">
+      <div class="brand-label">Budget-friendly options that get the job done</div>
+      <div class="brand-list">
+        <ul>
+          <li>MuscleBlaze Biozyme</li>
+          <li>MyProtein</li>
+          <li>Optimum Nutrition</li>
+        </ul>
+      </div>
+
+      <div class="brand-label">Better taste, slightly higher price point</div>
+      <div class="brand-list">
+        <ul>
+          <li>Isopure</li>
+          <li>Dymatize</li>
+          <li>Fuelled <span class="partner-note">I am partnered with this brand - they have very clean ingredients, which is exactly why I chose to work with them</span></li>
+        </ul>
+      </div>
+
+      <div class="brand-label">Plant-based options</div>
+      <div class="brand-list">
+        <ul>
+          <li>Cosmix Wellness <span class="partner-note">I am partnered with them - my go-to flavors are Strawberry, Mango, and Pina Colada. Not a big fan of the other flavors, but try what works for you</span></li>
+          <li>OZiva</li>
+        </ul>
+      </div>
+    </div>
+
+    <p>Do your own research based on what fits your budget and preference. And if you feel confused, reach out to your coach.</p>
+
+    <hr class="divider">
+
+    <h3>How much protein should you be eating?</h3>
+    <p>0.8g per kg of body weight is the bare minimum your body needs to avoid deficiency. That is not the ideal - it's just the floor. Unfortunately, most people I work with are eating well below even this number.</p>
+    <p>Ideally, you want to aim for 1.8 to 2.2g per kg of body weight - especially when you're in a fat loss phase. Beyond 2.2g, the additional benefit is minimal.</p>
+    <p>You don't need to make a dramatic switch and start with 1.8 to 2.2 immediately. Observe how much protein you are consuming and increase it by just 0.1g per kg. If you feel good, gradually increase it further until you reach 1.8g per kg of body weight.</p>
+
+    <div class="protein-calc">
+      <div class="calc-label">Calculate your daily protein target</div>
+      <label for="weight-p">Enter your weight to see your range</label>
+      <div class="calc-row">
+        <input type="number" id="weight-p" placeholder="e.g. 70" min="30" max="300" oninput="calcProtein()">
+        <span class="calc-unit">kg</span>
+      </div>
+      <div class="calc-result" id="protein-result">
+        <p>Minimum: <span id="p-min">-</span> &nbsp;|&nbsp; Ideal range: <span id="p-ideal">-</span> per day</p>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <h3>How to measure it without counting every gram</h3>
+    <p>If tracking grams feels like too much work, use your hand instead.</p>
+    <p>Think of the non-finger part of your palm - that surface area is one portion. Aim for 1 to 2 portions like that in every meal. Start with 1 if that already feels like a stretch, and build from there.</p>
+
+    <div class="palm-box">
+      <div class="palm-label">Quick visual guide</div>
+      <p>Place your hand flat, fingers forward. The area from the base of your fingers down to your wrist - that square of palm - is one portion. Not the fingers. Just the palm.</p>
+    </div>
+
+    <div class="takeaway">
+      <p><strong>Today's takeaway:</strong> Focus on getting a palm-sized portion of protein in every meal. Choose lean sources where possible. And gradually work your way up towards 1.8g per kg of body weight - you don't have to get there overnight.</p>
+    </div>
+  </div>
+  <!-- Mark Complete -->
+  <div id="complete-wrap" style="background:#fff;border-radius:8px;padding:24px 32px;box-shadow:0 2px 8px rgba(0,0,0,0.07);display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:24px;">
+    <div>
+      <p style="font-size:15px;font-weight:700;color:#1a1a1a;margin-bottom:4px;">Done with today's lesson?</p>
+      <p style="font-size:13px;color:#888;margin:0;">Mark it complete so we can track your progress.</p>
+    </div>
+    <button id="complete-btn"
+      style="background:#e8552e;color:#fff;font-size:14px;font-weight:700;padding:12px 24px;border-radius:6px;border:none;cursor:pointer;white-space:nowrap;">
+      Mark as complete
+    </button>
+  </div>
+  <script>
+  (async () => {
+    const LESSON_ORDER = 5;
+    const _db = window.supabase.createClient('https://zxuuyzhbryelekousbsw.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inp4dXV5emhicnllbGVrb3VzYnN3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODE1NDE1MTcsImV4cCI6MjA5NzExNzUxN30.JPwlX_8KQ6DmQFur0B7jn8HUbrY9o0m43N4MGJgjdJY');
+    const { data: { session } } = await _db.auth.getSession();
+    if (!session) return;
+    const { data: lesson } = await _db.from('lessons').select('id').eq('order', LESSON_ORDER).single();
+    if (!lesson) return;
+    const lessonId = lesson.id;
+    const { data: progress } = await _db.from('user_progress')
+      .select('completed').eq('user_id', session.user.id).eq('lesson_id', lessonId).single();
+    if (progress && progress.completed) showDone();
+    document.getElementById('complete-btn').addEventListener('click', async () => {
+      const btn = document.getElementById('complete-btn');
+      btn.disabled = true; btn.textContent = '...';
+      await _db.from('user_progress').upsert(
+        { user_id: session.user.id, lesson_id: lessonId, completed: true, completed_at: new Date().toISOString() },
+        { onConflict: 'user_id,lesson_id' }
+      );
+      showDone();
+    });
+    function showDone() {
+      const btn = document.getElementById('complete-btn');
+      if (btn) btn.outerHTML = '<span style="color:#22c55e;font-weight:700;font-size:14px;">&#10003; Lesson complete!</span>';
+    }
+  })();
+  </script>
+
+  <div class="card signoff">
+    <p>Talk soon,<br><strong>Satish</strong><br><span style="color:#888;font-size:13px;">GetFit AF</span></p>
+  </div>
+
+</div>
+
+<script>
+function calcProtein() {
+  const w = parseFloat(document.getElementById('weight-p').value);
+  const result = document.getElementById('protein-result');
+  if (!w || w < 20 || w > 400) { result.classList.remove('visible'); return; }
+  const min = (w * 0.8).toFixed(0);
+  const lo  = (w * 1.8).toFixed(0);
+  const hi  = (w * 2.2).toFixed(0);
+  document.getElementById('p-min').textContent   = min + 'g';
+  document.getElementById('p-ideal').textContent = lo + 'g - ' + hi + 'g';
+  result.classList.add('visible');
+}
+</script>
+</body>
+</html>

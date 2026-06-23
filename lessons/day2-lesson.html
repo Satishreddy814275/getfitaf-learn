@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lesson 2 - The 3-Workout Rule | GetFit AF</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Arial, sans-serif; background: #f2f2f2; color: #222; }
+
+  .topbar { background: #e8552e; padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; }
+  .topbar-brand { color: #fff; font-size: 20px; font-weight: 700; letter-spacing: -0.3px; }
+  .topbar-label { color: #ffd4c8; font-size: 13px; }
+  .topbar-right { text-align: right; }
+  .topbar-back { color: #ffd4c8; font-size: 11px; text-decoration: none; opacity: 0.85; display: block; margin-top: 4px; }
+  .topbar-back:hover { opacity: 1; }
+
+  .container { max-width: 680px; margin: 40px auto; padding: 0 20px 60px; }
+
+  .lesson-meta { font-size: 12px; font-weight: 700; color: #e8552e; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
+  .lesson-title { font-size: 28px; font-weight: 700; color: #1a1a1a; line-height: 1.25; margin-bottom: 32px; }
+
+  .card { background: #fff; border-radius: 8px; padding: 36px 40px; box-shadow: 0 2px 8px rgba(0,0,0,0.07); margin-bottom: 24px; }
+
+  p { font-size: 16px; line-height: 1.75; color: #333; margin-bottom: 18px; }
+  p:last-child { margin-bottom: 0; }
+
+  .bold-statement { font-size: 20px; font-weight: 700; color: #1a1a1a; line-height: 1.4; margin: 8px 0 20px; }
+
+  .rule-table { width: 100%; border-radius: 8px; overflow: hidden; margin: 24px 0; }
+  .rule-table .rule-row { padding: 18px 22px; }
+  .rule-row-label { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
+  .rule-row-text { font-size: 15px; color: #333; line-height: 1.6; }
+
+  .rule-1 { background: #f7f7f7; border-bottom: 1px solid #efefef; }
+  .rule-1 .rule-row-label { color: #888; }
+  .rule-2 { background: #fff3ef; border-bottom: 1px solid #ffe0d6; }
+  .rule-2 .rule-row-label { color: #e8552e; }
+  .rule-3 { background: #ffecea; }
+  .rule-3 .rule-row-label { color: #cc2200; }
+
+  .takeaway { background: #f5f0eb; border-left: 4px solid #e8552e; padding: 18px 22px; border-radius: 0 6px 6px 0; margin: 28px 0 0; }
+  .takeaway p { font-size: 15px; color: #444; margin: 0; }
+
+  .signoff p { font-size: 15px; color: #555; line-height: 1.7; }
+</style>
+  <!-- Auth Guard -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+  <script>
+    (async () => {
+      const db = window.supabase.createClient(
+        'https://zxuuyzhbryelekousbsw.supabase.co',
+        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inp4dXV5emhicnllbGVrb3VzYnN3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODE1NDE1MTcsImV4cCI6MjA5NzExNzUxN30.JPwlX_8KQ6DmQFur0B7jn8HUbrY9o0m43N4MGJgjdJY'
+      );
+      const { data: { session } } = await db.auth.getSession();
+      if (!session) { window.location.href = '/login.html'; return; }
+      const { data: profile } = await db.from('profiles').select('approved,is_admin').eq('id', session.user.id).single();
+      if (!profile?.approved && !profile?.is_admin) { window.location.href = '/dashboard.html'; }
+    })();
+  </script>
+</head>
+<body>
+
+<div class="topbar">
+  <span class="topbar-brand">GetFit AF</span>
+  <div class="topbar-right">
+    <span class="topbar-label">Your daily lesson</span>
+    <a href="https://learn.getfitaf.fitness" class="topbar-back">&#8592; Back to dashboard</a>
+  </div>
+</div>
+
+<div class="container">
+
+  <p class="lesson-meta">Lesson 2</p>
+  <h1 class="lesson-title">The 3-Workout Rule - here's what I used to do</h1>
+
+  <div class="card">
+    <p>One of the biggest things I see people struggle with when it comes to working out isn't motivation. It isn't time. It's consistency.</p>
+    <p>Today I want to give you a rule that has personally kept me on track for over 12 years - through busy seasons, stressful periods, and every obstacle life has thrown at me. I've been working out for 12 years and training clients for 7 of those. In all that time, this one rule is the reason I've never completely fallen off track.</p>
+    <p>I call it the <strong>3-workout rule.</strong></p>
+
+    <div class="rule-table">
+      <div class="rule-row rule-1">
+        <div class="rule-row-label">Miss 1 workout</div>
+        <div class="rule-row-text">I treated it as an anomaly. Life happens. I didn't think too much about it.</div>
+      </div>
+      <div class="rule-row rule-2">
+        <div class="rule-row-label">Miss 2 in a row</div>
+        <div class="rule-row-text">I stayed aware. I'd start thinking about how I was going to get back on track - but I wouldn't stress about it yet.</div>
+      </div>
+      <div class="rule-row rule-3">
+        <div class="rule-row-label">Miss 3 in a row - not happening</div>
+        <div class="rule-row-text">I would do whatever it took to work out that day. Sacrifice work if I had to. Sleep if I had to. Rearrange my entire schedule if I had to. But I would not let that third day slip.</div>
+      </div>
+    </div>
+
+    <p>I want you to adopt this same rule for yourself.</p>
+    <p>Here's why it matters.</p>
+
+    <p class="bold-statement">Your fitness journey runs on momentum - and momentum is very easy to gain and very easy to lose.</p>
+
+    <p>Missing one workout? That's nothing. Missing two? Still completely recoverable. But missing three in a row is where the slide begins - where "I'll get back to it" quietly becomes "I'll get back to it next week." And we both know how that story usually ends.</p>
+    <p>This isn't just about workouts either. If you're eating outside your goals three days in a row - that's your signal too. Three consecutive setbacks, whether it's training or nutrition, is where you need to step in and do something about it before the momentum breaks completely.</p>
+    <p>Make this rule non-negotiable, and it will serve you for years.</p>
+    <p>One thing though - common sense always applies. If you're sick, injured, or genuinely unwell, rest. This rule is for life getting in the way, not your body telling you it needs recovery. Get better first, then get back on track.</p>
+
+    <div class="takeaway">
+      <p><strong>Today's takeaway:</strong> Never let yourself miss three workouts - or three good nutrition days - in a row. That's the line between a small blip and a real backslide.</p>
+    </div>
+  </div>
+  <!-- Mark Complete -->
+  <div id="complete-wrap" style="background:#fff;border-radius:8px;padding:24px 32px;box-shadow:0 2px 8px rgba(0,0,0,0.07);display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:24px;">
+    <div>
+      <p style="font-size:15px;font-weight:700;color:#1a1a1a;margin-bottom:4px;">Done with today's lesson?</p>
+      <p style="font-size:13px;color:#888;margin:0;">Mark it complete so we can track your progress.</p>
+    </div>
+    <button id="complete-btn"
+      style="background:#e8552e;color:#fff;font-size:14px;font-weight:700;padding:12px 24px;border-radius:6px;border:none;cursor:pointer;white-space:nowrap;">
+      Mark as complete
+    </button>
+  </div>
+  <script>
+  (async () => {
+    const LESSON_ORDER = 2;
+    const _db = window.supabase.createClient('https://zxuuyzhbryelekousbsw.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inp4dXV5emhicnllbGVrb3VzYnN3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODE1NDE1MTcsImV4cCI6MjA5NzExNzUxN30.JPwlX_8KQ6DmQFur0B7jn8HUbrY9o0m43N4MGJgjdJY');
+    const { data: { session } } = await _db.auth.getSession();
+    if (!session) return;
+    const { data: lesson } = await _db.from('lessons').select('id').eq('order', LESSON_ORDER).single();
+    if (!lesson) return;
+    const lessonId = lesson.id;
+    const { data: progress } = await _db.from('user_progress')
+      .select('completed').eq('user_id', session.user.id).eq('lesson_id', lessonId).single();
+    if (progress && progress.completed) showDone();
+    document.getElementById('complete-btn').addEventListener('click', async () => {
+      const btn = document.getElementById('complete-btn');
+      btn.disabled = true; btn.textContent = '...';
+      await _db.from('user_progress').upsert(
+        { user_id: session.user.id, lesson_id: lessonId, completed: true, completed_at: new Date().toISOString() },
+        { onConflict: 'user_id,lesson_id' }
+      );
+      showDone();
+    });
+    function showDone() {
+      const btn = document.getElementById('complete-btn');
+      if (btn) btn.outerHTML = '<span style="color:#22c55e;font-weight:700;font-size:14px;">&#10003; Lesson complete!</span>';
+    }
+  })();
+  </script>
+
+  <div class="card signoff">
+    <p>I'll be back tomorrow with Rule 2.</p>
+    <p style="margin-top:16px;">Talk soon,<br><strong>Satish</strong><br><span style="color:#888;font-size:13px;">GetFit AF</span></p>
+  </div>
+
+</div>
+</body>
+</html>

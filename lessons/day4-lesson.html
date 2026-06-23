@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lesson 4 - The Balanced Plate and Why Protein Comes First | GetFit AF</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Arial, sans-serif; background: #f2f2f2; color: #222; }
+
+  .topbar { background: #e8552e; padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; }
+  .topbar-brand { color: #fff; font-size: 20px; font-weight: 700; letter-spacing: -0.3px; }
+  .topbar-label { color: #ffd4c8; font-size: 13px; }
+  .topbar-right { text-align: right; }
+  .topbar-back { color: #ffd4c8; font-size: 11px; text-decoration: none; opacity: 0.85; display: block; margin-top: 4px; }
+  .topbar-back:hover { opacity: 1; }
+
+  .container { max-width: 680px; margin: 40px auto; padding: 0 20px 60px; }
+  .lesson-meta { font-size: 12px; font-weight: 700; color: #e8552e; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
+  .lesson-title { font-size: 28px; font-weight: 700; color: #1a1a1a; line-height: 1.25; margin-bottom: 32px; }
+
+  .card { background: #fff; border-radius: 8px; padding: 36px 40px; box-shadow: 0 2px 8px rgba(0,0,0,0.07); margin-bottom: 24px; }
+  p { font-size: 16px; line-height: 1.75; color: #333; margin-bottom: 18px; }
+  p:last-child { margin-bottom: 0; }
+  h3 { font-size: 18px; font-weight: 700; color: #1a1a1a; margin-bottom: 12px; margin-top: 28px; }
+  h3:first-child { margin-top: 0; }
+
+  .four-parts { width: 100%; border-radius: 6px; overflow: hidden; margin: 16px 0 24px; }
+  .four-parts .header { background: #e8552e; color: #fff; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; padding: 11px 18px; }
+  .four-parts .row { padding: 13px 18px; font-size: 15px; color: #333; border-bottom: 1px solid #ffe0d6; display: flex; align-items: center; gap: 12px; }
+  .four-parts .row:last-child { border-bottom: none; }
+  .four-parts .row:nth-child(odd) { background: #fff3ef; }
+  .four-parts .row:nth-child(even) { background: #fff9f7; }
+  .row-num { width: 24px; height: 24px; background: #e8552e; color: #fff; border-radius: 50%; font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+
+  .benefit-box { background: #f7f7f7; border-left: 3px solid #ccc; padding: 16px 20px; border-radius: 0 6px 6px 0; margin: 8px 0 20px; }
+  .benefit-box p { font-size: 15px; color: #555; margin-bottom: 10px; }
+  .benefit-box p:last-child { margin-bottom: 0; }
+
+  .thermic-table { width: 100%; border-radius: 6px; overflow: hidden; margin: 12px 0 20px; }
+  .thermic-table thead td { background: #1a1a1a; color: #fff; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; padding: 10px 16px; }
+  .thermic-table tbody tr:nth-child(odd) td { background: #f7f7f7; }
+  .thermic-table tbody tr:nth-child(even) td { background: #fff; }
+  .thermic-table tbody td { padding: 12px 16px; font-size: 15px; color: #333; border-bottom: 1px solid #eee; }
+  .thermic-table tbody tr:last-child td { border-bottom: none; }
+  .thermic-table .highlight td { background: #fff3ef !important; font-weight: 700; }
+  .thermic-table .highlight td:last-child { color: #e8552e; }
+
+  .palm-box { background: #1a1a1a; border-radius: 8px; padding: 22px 24px; margin: 20px 0; }
+  .palm-box .palm-label { font-size: 11px; font-weight: 700; color: #e8552e; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+  .palm-box p { color: #f0f0f0; font-size: 15px; margin-bottom: 0; line-height: 1.7; }
+
+  .takeaway { background: #f5f0eb; border-left: 4px solid #e8552e; padding: 18px 22px; border-radius: 0 6px 6px 0; margin: 24px 0 0; }
+  .takeaway p { font-size: 15px; color: #444; margin: 0; }
+
+  .divider { border: none; border-top: 2px solid #f0f0f0; margin: 28px 0; }
+  .signoff p { font-size: 15px; color: #555; line-height: 1.7; }
+</style>
+  <!-- Auth Guard -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+  <script>
+    (async () => {
+      const db = window.supabase.createClient(
+        'https://zxuuyzhbryelekousbsw.supabase.co',
+        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inp4dXV5emhicnllbGVrb3VzYnN3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODE1NDE1MTcsImV4cCI6MjA5NzExNzUxN30.JPwlX_8KQ6DmQFur0B7jn8HUbrY9o0m43N4MGJgjdJY'
+      );
+      const { data: { session } } = await db.auth.getSession();
+      if (!session) { window.location.href = '/login.html'; return; }
+      const { data: profile } = await db.from('profiles').select('approved,is_admin').eq('id', session.user.id).single();
+      if (!profile?.approved && !profile?.is_admin) { window.location.href = '/dashboard.html'; }
+    })();
+  </script>
+</head>
+<body>
+
+<div class="topbar">
+  <span class="topbar-brand">GetFit AF</span>
+  <div class="topbar-right">
+    <span class="topbar-label">Your daily lesson</span>
+    <a href="https://learn.getfitaf.fitness" class="topbar-back">&#8592; Back to dashboard</a>
+  </div>
+</div>
+
+<div class="container">
+
+  <p class="lesson-meta">Lesson 4</p>
+  <h1 class="lesson-title">The balanced plate - and why protein comes first</h1>
+
+  <div class="card">
+    <p>Whenever someone thinks about going on a diet, the first thing that comes to mind is portion control.</p>
+    <p>And while that is a necessary step, just taking your existing diet and reducing the portions is only going to make you feel hungrier and hungrier. Which makes the whole thing very hard to sustain.</p>
+    <p>That's why the first thing I want you to focus on is learning how to create balance on your plate.</p>
+
+    <p>When your plate is balanced, three things happen automatically:</p>
+    <div class="benefit-box">
+      <p>- Your overall calorie consumption comes down - without counting a single calorie</p>
+      <p>- You feel satisfied with your meals</p>
+      <p>- Your body gets all the nutrients it needs to function well</p>
+    </div>
+
+    <p>A balanced meal has four parts:</p>
+    <div class="four-parts">
+      <div class="header">The four parts of a balanced meal</div>
+      <div class="row"><span class="row-num">1</span> Protein</div>
+      <div class="row"><span class="row-num">2</span> Vegetables</div>
+      <div class="row"><span class="row-num">3</span> Carbohydrates</div>
+      <div class="row"><span class="row-num">4</span> Fats</div>
+    </div>
+
+    <p>We'll cover all four over the coming days. But today we're starting with protein - because if there's one thing I want you to prioritise above everything else right now, it's this.</p>
+
+    <hr class="divider">
+
+    <h3>Benefit 1: Protein protects your muscle while you lose fat.</h3>
+    <p>When you cut your food intake, you don't just lose fat - you also lose muscle. And on your weight loss journey, your priority should be to retain as much muscle as possible.</p>
+    <p>Here's why. As we age - especially after 30 - we lose muscle every single year. That's why things like climbing stairs and walking long distances get harder as we get older. If we want to hold onto our quality of life for as long as possible, we need to hold onto our muscle.</p>
+    <p>There's another angle to this too...</p>
+    <p>Muscle is metabolically active tissue. More muscle means you burn more calories at rest - which means you can eat more and still lose weight. Who doesn't want that?</p>
+    <p>Having an adequate amount of protein in your diet can be really helpful here, because it has something called a "muscle-sparing effect." Enough protein means you minimise the muscle you lose, while your fat loss continues.</p>
+
+    <hr class="divider">
+
+    <h3>Benefit 2: Protein burns more calories just for digestion.</h3>
+    <p>This is called the thermic effect - the amount of energy your body uses to digest food.</p>
+    <p>For every 100 calories you consume from protein, your body uses 25 calories just to digest it. So the net calorie intake from protein is only 75 calories.</p>
+
+    <table class="thermic-table">
+      <thead><tr><td>Macronutrient</td><td>Calories burned to digest (per 100 cal)</td><td>Net calories absorbed</td></tr></thead>
+      <tbody>
+        <tr class="highlight"><td><strong>Protein</strong></td><td>25 cal</td><td>75 cal</td></tr>
+        <tr><td>Carbohydrates</td><td>8 cal</td><td>92 cal</td></tr>
+        <tr><td>Fats</td><td>3 cal</td><td>97 cal</td></tr>
+      </tbody>
+    </table>
+
+    <p>Protein has the highest thermic effect of the three. Which means the net calories you absorb from protein are significantly lower than the same number of calories from carbs or fat.</p>
+
+    <hr class="divider">
+
+    <h3>Benefit 3: Protein keeps you full.</h3>
+    <p>Having enough protein keeps you satisfied with your meals - which leads to three things: your overall cravings come down, you eat less at each meal, and you feel less hungry between meals.</p>
+    <p>That last one matters most. Being in a calorie deficit - eating less than your body needs - is genuinely hard. Your body actively fights the process because it thinks you're in a famine.</p>
+    <p>That's how difficult it was for our ancestors to find food. And your body hasn't forgotten.</p>
+    <p>The goal is to add foods that reduce that sensation of hunger and keep you feeling full. Some struggle is always going to be part of this - but getting your protein right makes the whole process far more tolerable.</p>
+
+    <div class="takeaway">
+      <p><strong>Today's takeaway:</strong> A balanced plate automatically brings your calories down, keeps you full, and gives your body what it needs. Protein is the first piece of that puzzle - it protects your muscle, burns more calories to digest, and keeps hunger in check.</p>
+    </div>
+  </div>
+  <!-- Mark Complete -->
+  <div id="complete-wrap" style="background:#fff;border-radius:8px;padding:24px 32px;box-shadow:0 2px 8px rgba(0,0,0,0.07);display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:24px;">
+    <div>
+      <p style="font-size:15px;font-weight:700;color:#1a1a1a;margin-bottom:4px;">Done with today's lesson?</p>
+      <p style="font-size:13px;color:#888;margin:0;">Mark it complete so we can track your progress.</p>
+    </div>
+    <button id="complete-btn"
+      style="background:#e8552e;color:#fff;font-size:14px;font-weight:700;padding:12px 24px;border-radius:6px;border:none;cursor:pointer;white-space:nowrap;">
+      Mark as complete
+    </button>
+  </div>
+  <script>
+  (async () => {
+    const LESSON_ORDER = 4;
+    const _db = window.supabase.createClient('https://zxuuyzhbryelekousbsw.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inp4dXV5emhicnllbGVrb3VzYnN3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODE1NDE1MTcsImV4cCI6MjA5NzExNzUxN30.JPwlX_8KQ6DmQFur0B7jn8HUbrY9o0m43N4MGJgjdJY');
+    const { data: { session } } = await _db.auth.getSession();
+    if (!session) return;
+    const { data: lesson } = await _db.from('lessons').select('id').eq('order', LESSON_ORDER).single();
+    if (!lesson) return;
+    const lessonId = lesson.id;
+    const { data: progress } = await _db.from('user_progress')
+      .select('completed').eq('user_id', session.user.id).eq('lesson_id', lessonId).single();
+    if (progress && progress.completed) showDone();
+    document.getElementById('complete-btn').addEventListener('click', async () => {
+      const btn = document.getElementById('complete-btn');
+      btn.disabled = true; btn.textContent = '...';
+      await _db.from('user_progress').upsert(
+        { user_id: session.user.id, lesson_id: lessonId, completed: true, completed_at: new Date().toISOString() },
+        { onConflict: 'user_id,lesson_id' }
+      );
+      showDone();
+    });
+    function showDone() {
+      const btn = document.getElementById('complete-btn');
+      if (btn) btn.outerHTML = '<span style="color:#22c55e;font-weight:700;font-size:14px;">&#10003; Lesson complete!</span>';
+    }
+  })();
+  </script>
+
+  <div class="card signoff">
+    <p>Talk soon,<br><strong>Satish</strong><br><span style="color:#888;font-size:13px;">GetFit AF</span></p>
+  </div>
+
+</div>
+</body>
+</html>

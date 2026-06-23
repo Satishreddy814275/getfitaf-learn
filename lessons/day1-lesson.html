@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lesson 1 - Growth Mindset vs Fixed Mindset | GetFit AF</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Arial, sans-serif; background: #f2f2f2; color: #222; }
+
+  .topbar {
+    background: #e8552e; padding: 16px 24px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .topbar-brand { color: #fff; font-size: 20px; font-weight: 700; letter-spacing: -0.3px; }
+  .topbar-label { color: #ffd4c8; font-size: 13px; }
+  .topbar-right { text-align: right; }
+  .topbar-back { color: #ffd4c8; font-size: 11px; text-decoration: none; opacity: 0.85; display: block; margin-top: 4px; }
+  .topbar-back:hover { opacity: 1; }
+
+  .container { max-width: 680px; margin: 40px auto; padding: 0 20px 60px; }
+
+  .lesson-meta { font-size: 12px; font-weight: 700; color: #e8552e; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
+  .lesson-title { font-size: 28px; font-weight: 700; color: #1a1a1a; line-height: 1.25; margin-bottom: 32px; }
+
+  .card { background: #fff; border-radius: 8px; padding: 36px 40px; box-shadow: 0 2px 8px rgba(0,0,0,0.07); margin-bottom: 24px; }
+
+  p { font-size: 16px; line-height: 1.75; color: #333; margin-bottom: 18px; }
+  p:last-child { margin-bottom: 0; }
+
+  .big-statement { font-size: 22px; font-weight: 700; color: #1a1a1a; margin: 4px 0 22px; line-height: 1.3; }
+  .bold-statement { font-size: 19px; font-weight: 700; color: #1a1a1a; margin: 4px 0 18px; line-height: 1.4; }
+
+  .quote {
+    border-left: 3px solid #cccccc; background: #f7f7f7;
+    padding: 16px 20px; border-radius: 0 6px 6px 0; margin: 4px 0 20px;
+  }
+  .quote.positive { border-left-color: #e8552e; }
+  .quote p { font-family: Georgia, serif; font-size: 15px; color: #555; font-style: italic; margin: 0; }
+
+  .progress-table { width: 100%; border-radius: 8px; overflow: hidden; margin: 4px 0 20px; }
+  .progress-table tr td {
+    background: #fff3ef; padding: 14px 18px;
+    font-size: 15px; color: #333; border-bottom: 1px solid #ffe0d6;
+  }
+  .progress-table tr:last-child td { border-bottom: none; }
+
+  .takeaway {
+    background: #f5f0eb; border-left: 4px solid #e8552e;
+    padding: 18px 22px; border-radius: 0 6px 6px 0; margin: 28px 0 0;
+  }
+  .takeaway p { font-size: 15px; color: #444; margin: 0; }
+
+  .form-block {
+    background: #fff; border-radius: 8px; padding: 28px 40px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07); margin-bottom: 24px;
+    border-left: 4px solid #e8552e;
+  }
+  .form-block h3 { font-size: 14px; font-weight: 700; color: #e8552e; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
+  .form-block p { font-size: 14px; color: #555; margin-bottom: 16px; }
+  .form-btn {
+    display: inline-block; background: #e8552e; color: #fff;
+    padding: 13px 26px; border-radius: 6px; font-size: 15px;
+    font-weight: 600; text-decoration: none;
+  }
+  .form-btn:hover { opacity: 0.9; }
+
+  .signoff p { font-size: 15px; color: #555; line-height: 1.7; }
+</style>
+  <!-- Auth Guard -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+  <script>
+    (async () => {
+      const db = window.supabase.createClient(
+        'https://zxuuyzhbryelekousbsw.supabase.co',
+        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inp4dXV5emhicnllbGVrb3VzYnN3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODE1NDE1MTcsImV4cCI6MjA5NzExNzUxN30.JPwlX_8KQ6DmQFur0B7jn8HUbrY9o0m43N4MGJgjdJY'
+      );
+      const { data: { session } } = await db.auth.getSession();
+      if (!session) { window.location.href = '/login.html'; return; }
+      const { data: profile } = await db.from('profiles').select('approved,is_admin').eq('id', session.user.id).single();
+      if (!profile?.approved && !profile?.is_admin) { window.location.href = '/dashboard.html'; }
+    })();
+  </script>
+</head>
+<body>
+
+<div class="topbar">
+  <span class="topbar-brand">GetFit AF</span>
+  <div class="topbar-right">
+    <span class="topbar-label">Your daily lesson</span>
+    <a href="https://learn.getfitaf.fitness" class="topbar-back">&#8592; Back to dashboard</a>
+  </div>
+</div>
+
+<div class="container">
+
+  <p class="lesson-meta">Lesson 1</p>
+  <h1 class="lesson-title">What you actually need to succeed - growth mindset vs fixed mindset</h1>
+
+  <!-- Form block top -->
+  <div class="form-block">
+    <h3>Form to fill out today</h3>
+    <p>Before or after reading today's lesson, please take a few minutes to fill out this short form. The more we know about you, the more we can personalise your plan.</p>
+    <a href="https://forms.getfitaf.fitness/eating-habits" target="_blank" class="form-btn">Fill out today's form &#x2192;</a>
+  </div>
+
+  <!-- Lesson content -->
+  <div class="card">
+    <p>There's a lot of talk about nutrition and exercise in the fitness world. But there's a third piece that almost nobody talks about, and in my experience it matters just as much.</p>
+
+    <p class="big-statement">Your mindset.</p>
+
+    <p>How you approach the next few weeks and months is going to shape how this entire journey turns out.</p>
+    <p>One of the biggest things I see holding people back is blaming external circumstances. And I get it - life is genuinely busy. But here's the difference between the clients who get results and the ones who don't.</p>
+    <p>When you approach a challenge with a <strong>fixed mindset</strong> - thinking there's no way through it - your brain stops looking for solutions. If you're telling yourself:</p>
+
+    <div class="quote">
+      <p>"My job is too hectic, my kids are exhausting, I just don't have the discipline for this."</p>
+    </div>
+
+    <p>...that's exactly how it plays out. Even when there are real options available to you, your brain won't find them.</p>
+    <p>But when you shift to thinking <strong>"this is a challenge I can work through,"</strong> something changes. Your brain starts looking for solutions:</p>
+
+    <div class="quote positive">
+      <p>"My schedule is packed - but could I do a 15-minute workout? Could I make one better food choice today?"</p>
+    </div>
+
+    <p>Suddenly there are possibilities where there weren't before.</p>
+    <p>The goal here is <strong>never perfection.</strong></p>
+
+    <table class="progress-table">
+      <tr><td>Can't do 60 minutes? &nbsp;&rarr;&nbsp; <strong>Do 30 minutes</strong></td></tr>
+      <tr><td>Can't do 30 minutes? &nbsp;&rarr;&nbsp; <strong>Do 15 minutes</strong></td></tr>
+      <tr><td>Can't do 15 minutes? &nbsp;&rarr;&nbsp; <strong>Do something</strong></td></tr>
+    </table>
+
+    <p>There are no rules to this game.</p>
+    <p class="bold-statement">The only rule is to show up consistently.</p>
+
+    <p>This isn't just something I say. Research actually backs this up - the way you think about a challenge directly affects how you behave in response to it. So whatever comes up over the next few weeks, approach it with an open mind. We're not going to ignore the hard stuff. We're just not going to let it stop us either.</p>
+
+    <div class="takeaway">
+      <p><strong>Today's takeaway:</strong> The only rule is to show up consistently. Approach every challenge with an open mind - not ignoring the hard stuff, but not letting it stop you either.</p>
+    </div>
+  </div>
+
+  <!-- Form block bottom -->
+  <div class="form-block">
+    <h3>Don't forget today's form</h3>
+    <p>If you haven't filled it out yet, now's a good time. It only takes a few minutes.</p>
+    <a href="https://forms.getfitaf.fitness/eating-habits" target="_blank" class="form-btn">Fill out today's form &#x2192;</a>
+  </div>
+
+  <!-- Sign-off -->
+  <!-- Mark Complete -->
+  <div id="complete-wrap" style="background:#fff;border-radius:8px;padding:24px 32px;box-shadow:0 2px 8px rgba(0,0,0,0.07);display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:24px;">
+    <div>
+      <p style="font-size:15px;font-weight:700;color:#1a1a1a;margin-bottom:4px;">Done with today's lesson?</p>
+      <p style="font-size:13px;color:#888;margin:0;">Mark it complete so we can track your progress.</p>
+    </div>
+    <button id="complete-btn"
+      style="background:#e8552e;color:#fff;font-size:14px;font-weight:700;padding:12px 24px;border-radius:6px;border:none;cursor:pointer;white-space:nowrap;">
+      Mark as complete
+    </button>
+  </div>
+  <script>
+  (async () => {
+    const LESSON_ORDER = 1;
+    const _db = window.supabase.createClient('https://zxuuyzhbryelekousbsw.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inp4dXV5emhicnllbGVrb3VzYnN3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODE1NDE1MTcsImV4cCI6MjA5NzExNzUxN30.JPwlX_8KQ6DmQFur0B7jn8HUbrY9o0m43N4MGJgjdJY');
+    const { data: { session } } = await _db.auth.getSession();
+    if (!session) return;
+    const { data: lesson } = await _db.from('lessons').select('id').eq('order', LESSON_ORDER).single();
+    if (!lesson) return;
+    const lessonId = lesson.id;
+    const { data: progress } = await _db.from('user_progress')
+      .select('completed').eq('user_id', session.user.id).eq('lesson_id', lessonId).single();
+    if (progress && progress.completed) showDone();
+    document.getElementById('complete-btn').addEventListener('click', async () => {
+      const btn = document.getElementById('complete-btn');
+      btn.disabled = true; btn.textContent = '...';
+      await _db.from('user_progress').upsert(
+        { user_id: session.user.id, lesson_id: lessonId, completed: true, completed_at: new Date().toISOString() },
+        { onConflict: 'user_id,lesson_id' }
+      );
+      showDone();
+    });
+    function showDone() {
+      const btn = document.getElementById('complete-btn');
+      if (btn) btn.outerHTML = '<span style="color:#22c55e;font-weight:700;font-size:14px;">&#10003; Lesson complete!</span>';
+    }
+  })();
+  </script>
+
+  <div class="card signoff">
+    <p>I'll be back tomorrow with your next lesson.</p>
+    <p style="margin-top:16px;">Talk soon,<br><strong>Satish</strong><br><span style="color:#888;font-size:13px;">GetFit AF</span></p>
+  </div>
+
+</div>
+  <script>
+  // Append user name+email to form links so forms are pre-filled
+  (async () => {
+    const _fdb = window.supabase.createClient('https://zxuuyzhbryelekousbsw.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inp4dXV5emhicnllbGVrb3VzYnN3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODE1NDE1MTcsImV4cCI6MjA5NzExNzUxN30.JPwlX_8KQ6DmQFur0B7jn8HUbrY9o0m43N4MGJgjdJY');
+    const { data: { session } } = await _fdb.auth.getSession();
+    if (!session) return;
+    const email = session.user.email || '';
+    const { data: profile } = await _fdb.from('profiles').select('full_name').eq('id', session.user.id).single();
+    const name = profile?.full_name || '';
+    if (!name && !email) return;
+    const params = new URLSearchParams();
+    if (name)  params.set('name',  name);
+    if (email) params.set('email', email);
+    document.querySelectorAll('a[href*="forms.getfitaf.fitness"]').forEach(a => {
+      const base = a.href.split('?')[0];
+      a.href = base + '?' + params.toString();
+    });
+  })();
+  </script>
+
+</body>
+</html>

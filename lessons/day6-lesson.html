@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lesson 4 - The Weight Loss Rate That Actually Works | GetFit AF</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Arial, sans-serif; background: #f2f2f2; color: #222; }
+
+  .topbar { background: #e8552e; padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; }
+  .topbar-brand { color: #fff; font-size: 20px; font-weight: 700; letter-spacing: -0.3px; }
+  .topbar-label { color: #ffd4c8; font-size: 13px; }
+  .topbar-right { text-align: right; }
+  .topbar-back { color: #ffd4c8; font-size: 11px; text-decoration: none; opacity: 0.85; display: block; margin-top: 4px; }
+  .topbar-back:hover { opacity: 1; }
+
+  .container { max-width: 680px; margin: 40px auto; padding: 0 20px 60px; }
+  .lesson-meta { font-size: 12px; font-weight: 700; color: #e8552e; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
+  .lesson-title { font-size: 28px; font-weight: 700; color: #1a1a1a; line-height: 1.25; margin-bottom: 32px; }
+
+  .card { background: #fff; border-radius: 8px; padding: 36px 40px; box-shadow: 0 2px 8px rgba(0,0,0,0.07); margin-bottom: 24px; }
+  p { font-size: 16px; line-height: 1.75; color: #333; margin-bottom: 18px; }
+  p:last-child { margin-bottom: 0; }
+
+  h3 { font-size: 18px; font-weight: 700; color: #1a1a1a; margin-bottom: 12px; margin-top: 8px; }
+
+  .bold-statement { font-size: 20px; font-weight: 700; color: #1a1a1a; line-height: 1.4; margin: 4px 0 20px; }
+
+  /* Calculator */
+  .calculator { background: #1a1a1a; border-radius: 8px; padding: 28px 32px; margin: 24px 0; }
+  .calculator label { display: block; font-size: 13px; font-weight: 700; color: #ffd4c8; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 10px; }
+  .calc-row { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+  .calc-row input {
+    flex: 1; min-width: 120px; padding: 12px 16px; border-radius: 6px; border: none;
+    font-size: 16px; font-family: Arial, sans-serif; color: #222; outline: none;
+  }
+  .calc-row input:focus { box-shadow: 0 0 0 3px rgba(232,85,46,0.4); }
+  .calc-unit { color: #fff; font-size: 15px; font-weight: 600; }
+  .calc-result { margin-top: 18px; background: #e8552e; border-radius: 6px; padding: 16px 20px; display: none; }
+  .calc-result.visible { display: block; }
+  .calc-result p { margin: 0; font-size: 16px; color: #fff; font-weight: 600; line-height: 1.6; }
+  .calc-result span { font-size: 22px; font-weight: 700; }
+
+  /* Reference table */
+  .ref-table { width: 100%; border-radius: 6px; overflow: hidden; margin: 16px 0 24px; }
+  .ref-table thead td { background: #e8552e; color: #fff; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; padding: 11px 16px; }
+  .ref-table tbody tr:nth-child(odd) td { background: #fff3ef; }
+  .ref-table tbody tr:nth-child(even) td { background: #fff9f7; }
+  .ref-table tbody td { padding: 11px 16px; font-size: 15px; color: #333; border-bottom: 1px solid #ffe0d6; }
+  .ref-table tbody tr:last-child td { border-bottom: none; }
+  .ref-table tbody td:last-child { font-weight: 700; }
+
+  .exception-box { background: #f7f7f7; border-left: 3px solid #ccc; padding: 16px 20px; border-radius: 0 6px 6px 0; margin: 8px 0 20px; }
+  .exception-box p { font-size: 14px; color: #555; margin-bottom: 10px; }
+  .exception-box p:last-child { margin-bottom: 0; }
+
+  .women-note { background: #f5f0eb; border-left: 4px solid #e8552e; padding: 20px 24px; border-radius: 0 6px 6px 0; margin: 24px 0; }
+  .women-note .note-label { font-size: 12px; font-weight: 700; color: #e8552e; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 10px; }
+  .women-note p { font-size: 15px; color: #444; margin-bottom: 12px; }
+  .women-note p:last-child { margin-bottom: 0; }
+
+  .takeaway { background: #f5f0eb; border-left: 4px solid #e8552e; padding: 18px 22px; border-radius: 0 6px 6px 0; margin: 24px 0 0; }
+  .takeaway p { font-size: 15px; color: #444; margin: 0; }
+
+  .signoff p { font-size: 15px; color: #555; line-height: 1.7; }
+</style>
+  <!-- Auth Guard -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+  <script>
+    (async () => {
+      const db = window.supabase.createClient(
+        'https://zxuuyzhbryelekousbsw.supabase.co',
+        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inp4dXV5emhicnllbGVrb3VzYnN3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODE1NDE1MTcsImV4cCI6MjA5NzExNzUxN30.JPwlX_8KQ6DmQFur0B7jn8HUbrY9o0m43N4MGJgjdJY'
+      );
+      const { data: { session } } = await db.auth.getSession();
+      if (!session) { window.location.href = '/login.html'; return; }
+      const { data: profile } = await db.from('profiles').select('approved,is_admin').eq('id', session.user.id).single();
+      if (!profile?.approved && !profile?.is_admin) { window.location.href = '/dashboard.html'; }
+    })();
+  </script>
+</head>
+<body>
+
+<div class="topbar">
+  <span class="topbar-brand">GetFit AF</span>
+  <div class="topbar-right">
+    <span class="topbar-label">Your daily lesson</span>
+    <a href="https://learn.getfitaf.fitness" class="topbar-back">&#8592; Back to dashboard</a>
+  </div>
+</div>
+
+<div class="container">
+
+  <p class="lesson-meta">Lesson 6</p>
+  <h1 class="lesson-title">The weight loss rate that actually works</h1>
+
+  <!-- Form block top -->
+  <div style="background:#fff;border-radius:8px;padding:28px 32px;box-shadow:0 2px 8px rgba(0,0,0,0.07);margin-bottom:24px;border-left:4px solid #e8552e;">
+    <p style="font-size:12px;font-weight:700;color:#e8552e;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;">📋 Form to fill out today</p>
+    <p style="font-size:14px;color:#555;margin-bottom:16px;">Before or after reading today's lesson, share your weight history with us so we understand where you've been and can personalise your plan accordingly.</p>
+    <a href="https://forms.getfitaf.fitness/weight-history.html" target="_blank" rel="noopener"
+      style="display:inline-block;background:#e8552e;color:#fff;font-size:14px;font-weight:700;padding:12px 24px;border-radius:6px;text-decoration:none;">
+      Fill out today's form →
+    </a>
+  </div>
+
+  <div class="card">
+    <p>One of the most common questions I get from new clients is: "How much weight can I expect to lose?"</p>
+    <p>It's a fair question. But it's not the right question to ask.</p>
+    <p>The better question is: <strong>how fast can I lose weight sustainably - while becoming a stronger version of myself in the process?</strong></p>
+    <p>Because here's the truth. There are plenty of ways to lose weight fast. Crash diets, extreme restriction, hours of cardio every day. They work in the short term. But almost always, they're not sustainable - and they leave you weaker, not stronger.</p>
+
+    <h3>The rate I recommend: 0.5 to 1% of your body weight per week</h3>
+    <p>This range keeps fat loss moving without sacrificing the muscle you've built - or the muscle you're going to build.</p>
+
+    <!-- Interactive Calculator -->
+    <div class="calculator">
+      <label for="weight-input">Enter your current weight to find your target range</label>
+      <div class="calc-row">
+        <input type="number" id="weight-input" placeholder="e.g. 75" min="30" max="300" oninput="calcRange()">
+        <span class="calc-unit">kg</span>
+      </div>
+      <div class="calc-result" id="calc-result">
+        <p>Your weekly target: <span id="calc-min">-</span> to <span id="calc-max">-</span> per week</p>
+      </div>
+    </div>
+
+    <!-- Reference table -->
+    <p style="font-size:14px;color:#888;margin-bottom:8px;">Or use this quick reference:</p>
+    <table class="ref-table">
+      <thead><tr><td>Your weight</td><td>Weekly target range</td></tr></thead>
+      <tbody>
+        <tr><td>60 kg</td><td>300 - 600 g</td></tr>
+        <tr><td>70 kg</td><td>350 - 700 g</td></tr>
+        <tr><td>80 kg</td><td>400 - 800 g</td></tr>
+        <tr><td>90 kg</td><td>450 - 900 g</td></tr>
+        <tr><td>100 kg</td><td>500 g - 1 kg</td></tr>
+      </tbody>
+    </table>
+
+    <h3>If you're losing faster than 1% per week</h3>
+    <p>When you cut too aggressively, your body doesn't just burn fat for fuel - it starts breaking down muscle too. That is definitely not a trade-off worth making.</p>
+    <p style="font-size:14px;font-weight:700;color:#555;margin-bottom:8px;">The exceptions:</p>
+    <div class="exception-box">
+      <p>- If you are significantly overweight (more than 20 kg above your target), you may lose slightly more than 1% in the early weeks without much muscle loss. That's fine.</p>
+      <p>- If you're carrying a lot of water weight, you might see bigger drops early on. What you want to avoid is consistently losing more than 1% every week over 2-3 weeks.</p>
+    </div>
+
+    <h3>If you're losing slower than 0.5% per week</h3>
+    <p>This can feel demotivating - and if it's happening, it's worth looking at what you can adjust to pick up the pace slightly.</p>
+    <p style="font-size:14px;font-weight:700;color:#555;margin-bottom:8px;">The exception:</p>
+    <div class="exception-box">
+      <p>- If you've started strength training, you're eating enough protein, and you're following a balanced diet, you might find you're losing inches but the scale isn't moving much.</p>
+    </div>
+
+    <p class="bold-statement">In that situation you are actually in a better place.</p>
+
+    <p>You're building muscle. Muscle raises your metabolism. More muscle means you burn more calories at rest - which means the scale weight will come down eventually, and when it does, you'll be in a far stronger position than if you'd just lost weight quickly.</p>
+    <p>This phase usually doesn't last beyond 3-4 weeks. Flex that patience muscle - the scale will follow.</p>
+
+    <div class="women-note">
+      <div class="note-label">A note for women</div>
+      <p>Fat loss for men is relatively straightforward hormonally. For women, estrogen and progesterone shift throughout the month - and depending on where you are in your cycle, you may be holding onto extra water weight even when fat loss is actually happening.</p>
+      <p>Do not panic and do not slash your calories out of frustration. Extreme restriction doesn't last - and it almost always leads to bingeing, pulling you into that exhausting cycle of overeating and undereating. Wait it out. Your body is working even when the scale isn't moving.</p>
+    </div>
+
+    <p>Remember what we talked about on Day 3 - progress over perfection. This is exactly where that applies. The scale is one signal, not the whole story.</p>
+    <p>Speaking of which - the number you see on the scale each morning is probably not telling you the full truth anyway. Tomorrow I'll explain exactly why, and what to pay attention to instead.</p>
+
+    <div class="takeaway">
+      <p><strong>Today's takeaway:</strong> Aim for 0.5 to 1% of your body weight lost per week. Fast enough to feel like there is progress. Slow enough to ensure that you don't lose muscle.</p>
+    </div>
+  </div>
+  <!-- Mark Complete -->
+  <div id="complete-wrap" style="background:#fff;border-radius:8px;padding:24px 32px;box-shadow:0 2px 8px rgba(0,0,0,0.07);display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:24px;">
+    <div>
+      <p style="font-size:15px;font-weight:700;color:#1a1a1a;margin-bottom:4px;">Done with today's lesson?</p>
+      <p style="font-size:13px;color:#888;margin:0;">Mark it complete so we can track your progress.</p>
+    </div>
+    <button id="complete-btn"
+      style="background:#e8552e;color:#fff;font-size:14px;font-weight:700;padding:12px 24px;border-radius:6px;border:none;cursor:pointer;white-space:nowrap;">
+      Mark as complete
+    </button>
+  </div>
+  <script>
+  (async () => {
+    const LESSON_ORDER = 6;
+    const _db = window.supabase.createClient('https://zxuuyzhbryelekousbsw.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inp4dXV5emhicnllbGVrb3VzYnN3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODE1NDE1MTcsImV4cCI6MjA5NzExNzUxN30.JPwlX_8KQ6DmQFur0B7jn8HUbrY9o0m43N4MGJgjdJY');
+    const { data: { session } } = await _db.auth.getSession();
+    if (!session) return;
+    const { data: lesson } = await _db.from('lessons').select('id').eq('order', LESSON_ORDER).single();
+    if (!lesson) return;
+    const lessonId = lesson.id;
+    const { data: progress } = await _db.from('user_progress')
+      .select('completed').eq('user_id', session.user.id).eq('lesson_id', lessonId).single();
+    if (progress && progress.completed) showDone();
+    document.getElementById('complete-btn').addEventListener('click', async () => {
+      const btn = document.getElementById('complete-btn');
+      btn.disabled = true; btn.textContent = '...';
+      await _db.from('user_progress').upsert(
+        { user_id: session.user.id, lesson_id: lessonId, completed: true, completed_at: new Date().toISOString() },
+        { onConflict: 'user_id,lesson_id' }
+      );
+      showDone();
+    });
+    function showDone() {
+      const btn = document.getElementById('complete-btn');
+      if (btn) btn.outerHTML = '<span style="color:#22c55e;font-weight:700;font-size:14px;">&#10003; Lesson complete!</span>';
+    }
+  })();
+  </script>
+
+  <div class="card signoff">
+    <p>Talk soon,<br><strong>Satish</strong><br><span style="color:#888;font-size:13px;">GetFit AF</span></p>
+  </div>
+
+  <!-- Day 6 Form -->
+  <div style="background:#fff;border-radius:8px;padding:28px 32px;box-shadow:0 2px 8px rgba(0,0,0,0.07);margin-bottom:24px;border-left:4px solid #e8552e;">
+    <p style="font-size:12px;font-weight:700;color:#e8552e;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;">📋 Form for today</p>
+    <h3 style="font-size:18px;font-weight:700;color:#1a1a1a;margin-bottom:8px;">Weight History</h3>
+    <p style="font-size:15px;color:#555;margin-bottom:20px;">Share your weight journey with us — where you've been, what you've tried, and how things have changed. This helps us understand your history and personalise your plan.</p>
+    <a href="https://forms.getfitaf.fitness/weight-history.html" target="_blank" rel="noopener"
+      style="display:inline-block;background:#e8552e;color:#fff;font-size:14px;font-weight:700;padding:12px 24px;border-radius:6px;text-decoration:none;">
+      Open Form →
+    </a>
+  </div>
+
+</div>
+
+<script>
+function calcRange() {
+  const w = parseFloat(document.getElementById('weight-input').value);
+  const result = document.getElementById('calc-result');
+  if (!w || w < 20 || w > 400) { result.classList.remove('visible'); return; }
+  const minG = Math.round(w * 0.005 * 1000);
+  const maxG = Math.round(w * 0.01 * 1000);
+  const minDisplay = minG >= 1000 ? (minG/1000).toFixed(1) + ' kg' : minG + ' g';
+  const maxDisplay = maxG >= 1000 ? (maxG/1000).toFixed(1) + ' kg' : maxG + ' g';
+  document.getElementById('calc-min').textContent = minDisplay;
+  document.getElementById('calc-max').textContent = maxDisplay;
+  result.classList.add('visible');
+}
+</script>
+  <script>
+  // Append user name+email to form links so forms are pre-filled
+  (async () => {
+    const _fdb = window.supabase.createClient('https://zxuuyzhbryelekousbsw.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inp4dXV5emhicnllbGVrb3VzYnN3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODE1NDE1MTcsImV4cCI6MjA5NzExNzUxN30.JPwlX_8KQ6DmQFur0B7jn8HUbrY9o0m43N4MGJgjdJY');
+    const { data: { session } } = await _fdb.auth.getSession();
+    if (!session) return;
+    const email = session.user.email || '';
+    const { data: profile } = await _fdb.from('profiles').select('full_name').eq('id', session.user.id).single();
+    const name = profile?.full_name || '';
+    if (!name && !email) return;
+    const params = new URLSearchParams();
+    if (name)  params.set('name',  name);
+    if (email) params.set('email', email);
+    document.querySelectorAll('a[href*="forms.getfitaf.fitness"]').forEach(a => {
+      const base = a.href.split('?')[0];
+      a.href = base + '?' + params.toString();
+    });
+  })();
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lesson 13 - Your supplement guide: Omega-3 and Vitamin D3 | GetFit AF</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Arial, sans-serif; background: #f2f2f2; color: #222; }
+
+  .topbar { background: #e8552e; padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; }
+  .topbar-brand { color: #fff; font-size: 20px; font-weight: 700; letter-spacing: -0.3px; }
+  .topbar-label { color: #ffd4c8; font-size: 13px; }
+  .topbar-right { text-align: right; }
+  .topbar-back { color: #ffd4c8; font-size: 11px; text-decoration: none; opacity: 0.85; display: block; margin-top: 4px; }
+  .topbar-back:hover { opacity: 1; }
+
+  .container { max-width: 680px; margin: 40px auto; padding: 0 20px 60px; }
+  .lesson-meta { font-size: 12px; font-weight: 700; color: #e8552e; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
+  .lesson-title { font-size: 28px; font-weight: 700; color: #1a1a1a; line-height: 1.25; margin-bottom: 32px; }
+
+  .card { background: #fff; border-radius: 8px; padding: 36px 40px; box-shadow: 0 2px 8px rgba(0,0,0,0.07); margin-bottom: 24px; }
+  p { font-size: 16px; line-height: 1.75; color: #333; margin-bottom: 18px; }
+  p:last-child { margin-bottom: 0; }
+  h3 { font-size: 18px; font-weight: 700; color: #1a1a1a; margin-bottom: 12px; margin-top: 28px; }
+  h3:first-child { margin-top: 0; }
+
+  .list-box { background: #f7f7f7; border-left: 3px solid #ccc; padding: 16px 20px; border-radius: 0 6px 6px 0; margin: 8px 0 20px; }
+  .list-box p { font-size: 15px; color: #555; margin-bottom: 10px; }
+  .list-box p:last-child { margin-bottom: 0; }
+
+  .callout { background: #f5f0eb; border-left: 4px solid #e8552e; padding: 18px 22px; border-radius: 0 6px 6px 0; margin: 20px 0; }
+  .callout p { font-size: 15px; color: #444; margin: 0 0 10px; line-height: 1.7; }
+  .callout p:last-child { margin: 0; }
+  .callout a { color: #e8552e; font-weight: 700; text-decoration: none; }
+
+  .takeaway { background: #f5f0eb; border-left: 4px solid #e8552e; padding: 18px 22px; border-radius: 0 6px 6px 0; margin: 24px 0 0; }
+  .takeaway p { font-size: 15px; color: #444; margin: 0; }
+
+  .divider { border: none; border-top: 2px solid #f0f0f0; margin: 28px 0; }
+  .signoff p { font-size: 15px; color: #555; line-height: 1.7; }
+</style>
+  <!-- Auth Guard -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+  <script>
+    (async () => {
+      const db = window.supabase.createClient(
+        'https://zxuuyzhbryelekousbsw.supabase.co',
+        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inp4dXV5emhicnllbGVrb3VzYnN3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODE1NDE1MTcsImV4cCI6MjA5NzExNzUxN30.JPwlX_8KQ6DmQFur0B7jn8HUbrY9o0m43N4MGJgjdJY'
+      );
+      const { data: { session } } = await db.auth.getSession();
+      if (!session) { window.location.href = '/login.html'; return; }
+      const { data: profile } = await db.from('profiles').select('approved,is_admin').eq('id', session.user.id).single();
+      if (!profile?.approved && !profile?.is_admin) { window.location.href = '/dashboard.html'; }
+    })();
+  </script>
+</head>
+<body>
+
+<div class="topbar">
+  <span class="topbar-brand">GetFit AF</span>
+  <div class="topbar-right">
+    <span class="topbar-label">Your daily lesson</span>
+    <a href="https://learn.getfitaf.fitness" class="topbar-back">&#8592; Back to dashboard</a>
+  </div>
+</div>
+
+<div class="container">
+
+  <p class="lesson-meta">Lesson 13</p>
+  <h1 class="lesson-title">Your supplement guide - Part 2: Omega-3 and Vitamin D3</h1>
+
+  <!-- Form reminder - top -->
+  <div class="callout">
+    <p><strong>Reminder:</strong> If you haven't filled out the supplement questionnaire yet, please take a couple of minutes to do it. It helps us understand where you're starting from so we can give you more personalised guidance.</p>
+    <p><a href="https://forms.getfitaf.fitness/supplement-questionnaire">&#8594; Fill out the supplement questionnaire</a></p>
+  </div>
+
+  <div class="card">
+    <h3>Omega-3</h3>
+    <p>Before we get into the supplement itself, it's worth understanding why Omega-3 matters so much.</p>
+    <p>There are two types of fats your body relies on: Omega-3 and Omega-6. Ideally, you should be consuming these in roughly a 1:1 ratio - or at worst, something like 1:4.</p>
+    <p>The problem is that almost every food in the modern diet is loaded with Omega-6. Cooking oils, packaged foods, processed snacks - all Omega-6. The result? Most people are sitting at a ratio closer to 1:20. That kind of imbalance is directly linked to chronic inflammation, joint issues, and a range of other things you don't want building up over time.</p>
+    <p>The fix isn't to cut out Omega-6 - it's to bring more Omega-3 in. If you eat fatty fish regularly (salmon, sardines, mackerel), your Omega-3 intake is likely being taken care of. But in my experience, most people - even non-vegetarians - don't eat nearly enough fish. And for vegetarians, this gap is even more significant.</p>
+    <p>This is one supplement I strongly recommend, because the difference it makes to your joint health, inflammation levels, and general wellbeing is real.</p>
+
+    <div class="list-box">
+      <p><strong>What to look for:</strong> A fish oil supplement that lists EPA and DHA separately on the label. You want at least 500mg of combined EPA + DHA per serving. This is not the same as 500mg of fish oil - these are very different numbers. A 1,000mg fish oil capsule might only contain 150-200mg of actual EPA and DHA. Always check the specific EPA + DHA figures, not the total fish oil amount.</p>
+      <p><strong>Watch out for this:</strong> Some brands list their EPA + DHA on the label in a way that looks great - until you check the serving size. A label might show 500mg EPA + DHA, but base that number on two capsules per serving, not one. Always check what the serving size actually is. If it says 500mg per serving and the serving is two capsules, you'll need both capsules to hit that target. Don't just read the headline number.</p>
+      <p><strong>When to take it:</strong> With a meal that contains fat - Omega-3 is fat-soluble, so fat in the meal helps your body absorb it. Also keep it away from dairy or calcium-rich foods, as these may reduce absorption.</p>
+      <p><strong>If you're vegan or vegetarian:</strong> Choose algae-based Omega-3. Fish produce their Omega-3 by eating algae - so algae is the original source. Just as effective, with no fishy aftertaste.</p>
+    </div>
+
+    <hr class="divider">
+
+    <h3>Vitamin D3</h3>
+    <p>With the amount of time most of us spend indoors these days, Vitamin D deficiency has become extremely common. And unlike most other nutrients, Vitamin D is also one of the hardest to get through diet alone - which makes supplementation important for a lot of people.</p>
+    <p>Here's something important to understand: Vitamin D is a fat-soluble vitamin. Your body stores it rather than flushing out the excess. Water-soluble vitamins like Vitamin C get excreted in your urine when you take too much - fat-soluble vitamins don't work that way. They accumulate in the body, and elevated Vitamin D3 levels can actually become toxic. This is why you shouldn't just pick up a high-dose supplement off the shelf without first knowing your levels.</p>
+    <p>The right approach is to get a blood test done first. If you're deficient, your doctor will typically prescribe a course of 60,000 IU, taken once a week for 4-6 weeks depending on how deficient you are, followed by a maintenance dose of 60,000 IU per month. This needs to happen under proper medical guidance - not as something you self-prescribe.</p>
+    <p>You do get daily supplements at around 2,000 IU that are generally safe to take without a prescription. But these may not be enough to correct an existing deficiency on their own - they're more of a maintenance or prevention dose. If you suspect you're deficient, get tested first, and then take the appropriate course based on your actual levels.</p>
+
+    <div class="list-box">
+      <p><strong>What to take:</strong> Vitamin D3 (cholecalciferol) - D3 is better absorbed by the body than D2. You'll often find it paired with K2, which helps direct calcium to your bones rather than your arteries. That combination is a good one.</p>
+      <p><strong>How much:</strong> Get your levels tested first. If you're deficient, follow your doctor's recommendation. If you're looking to maintain and haven't been tested yet, 2,000 IU daily is a safe general starting point - but get a blood test done when you can.</p>
+      <p><strong>When to take it:</strong> With a meal that contains fat - D3 is fat-soluble, and fat helps with absorption.</p>
+    </div>
+
+    <div class="takeaway">
+      <p><strong>Today's takeaway:</strong> Omega-3 and Vitamin D3 are two of the most commonly deficient nutrients. For Omega-3 - always check the EPA + DHA amount per capsule, not just per serving. For Vitamin D3 - get your levels tested before starting a high-dose course. Both make a real difference when taken consistently.</p>
+    </div>
+  </div>
+
+  <!-- Form reminder - bottom -->
+  <div class="callout">
+    <p>Haven't filled out the supplement questionnaire yet? Please do - it takes 2 minutes and helps us understand where you're starting from.</p>
+    <p><a href="https://forms.getfitaf.fitness/supplement-questionnaire">&#8594; Fill out the questionnaire</a></p>
+  </div>
+  <!-- Mark Complete -->
+  <div id="complete-wrap" style="background:#fff;border-radius:8px;padding:24px 32px;box-shadow:0 2px 8px rgba(0,0,0,0.07);display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:24px;">
+    <div>
+      <p style="font-size:15px;font-weight:700;color:#1a1a1a;margin-bottom:4px;">Done with today's lesson?</p>
+      <p style="font-size:13px;color:#888;margin:0;">Mark it complete so we can track your progress.</p>
+    </div>
+    <button id="complete-btn"
+      style="background:#e8552e;color:#fff;font-size:14px;font-weight:700;padding:12px 24px;border-radius:6px;border:none;cursor:pointer;white-space:nowrap;">
+      Mark as complete
+    </button>
+  </div>
+  <script>
+  (async () => {
+    const LESSON_ORDER = 13;
+    const _db = window.supabase.createClient('https://zxuuyzhbryelekousbsw.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inp4dXV5emhicnllbGVrb3VzYnN3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODE1NDE1MTcsImV4cCI6MjA5NzExNzUxN30.JPwlX_8KQ6DmQFur0B7jn8HUbrY9o0m43N4MGJgjdJY');
+    const { data: { session } } = await _db.auth.getSession();
+    if (!session) return;
+    const { data: lesson } = await _db.from('lessons').select('id').eq('order', LESSON_ORDER).single();
+    if (!lesson) return;
+    const lessonId = lesson.id;
+    const { data: progress } = await _db.from('user_progress')
+      .select('completed').eq('user_id', session.user.id).eq('lesson_id', lessonId).single();
+    if (progress && progress.completed) showDone();
+    document.getElementById('complete-btn').addEventListener('click', async () => {
+      const btn = document.getElementById('complete-btn');
+      btn.disabled = true; btn.textContent = '...';
+      await _db.from('user_progress').upsert(
+        { user_id: session.user.id, lesson_id: lessonId, completed: true, completed_at: new Date().toISOString() },
+        { onConflict: 'user_id,lesson_id' }
+      );
+      showDone();
+    });
+    function showDone() {
+      const btn = document.getElementById('complete-btn');
+      if (btn) btn.outerHTML = '<span style="color:#22c55e;font-weight:700;font-size:14px;">&#10003; Lesson complete!</span>';
+    }
+  })();
+  </script>
+
+  <div class="card signoff">
+    <p>Talk soon,<br><strong>Satish</strong><br><span style="color:#888;font-size:13px;">GetFit AF</span></p>
+  </div>
+
+</div>
+  <script>
+  // Append user name+email to form links so forms are pre-filled
+  (async () => {
+    const _fdb = window.supabase.createClient('https://zxuuyzhbryelekousbsw.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inp4dXV5emhicnllbGVrb3VzYnN3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODE1NDE1MTcsImV4cCI6MjA5NzExNzUxN30.JPwlX_8KQ6DmQFur0B7jn8HUbrY9o0m43N4MGJgjdJY');
+    const { data: { session } } = await _fdb.auth.getSession();
+    if (!session) return;
+    const email = session.user.email || '';
+    const { data: profile } = await _fdb.from('profiles').select('full_name').eq('id', session.user.id).single();
+    const name = profile?.full_name || '';
+    if (!name && !email) return;
+    const params = new URLSearchParams();
+    if (name)  params.set('name',  name);
+    if (email) params.set('email', email);
+    document.querySelectorAll('a[href*="forms.getfitaf.fitness"]').forEach(a => {
+      const base = a.href.split('?')[0];
+      a.href = base + '?' + params.toString();
+    });
+  })();
+  </script>
+
+</body>
+</html>

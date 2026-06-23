@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lesson 11 - How to deal with difficult exercises | GetFit AF</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Arial, sans-serif; background: #f2f2f2; color: #222; }
+
+  .topbar { background: #e8552e; padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; }
+  .topbar-brand { color: #fff; font-size: 20px; font-weight: 700; letter-spacing: -0.3px; }
+  .topbar-label { color: #ffd4c8; font-size: 13px; }
+  .topbar-right { text-align: right; }
+  .topbar-back { color: #ffd4c8; font-size: 11px; text-decoration: none; opacity: 0.85; display: block; margin-top: 4px; }
+  .topbar-back:hover { opacity: 1; }
+
+  .container { max-width: 680px; margin: 40px auto; padding: 0 20px 60px; }
+  .lesson-meta { font-size: 12px; font-weight: 700; color: #e8552e; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
+  .lesson-title { font-size: 28px; font-weight: 700; color: #1a1a1a; line-height: 1.25; margin-bottom: 32px; }
+
+  .card { background: #fff; border-radius: 8px; padding: 36px 40px; box-shadow: 0 2px 8px rgba(0,0,0,0.07); margin-bottom: 24px; }
+  p { font-size: 16px; line-height: 1.75; color: #333; margin-bottom: 18px; }
+  p:last-child { margin-bottom: 0; }
+  h3 { font-size: 18px; font-weight: 700; color: #1a1a1a; margin-bottom: 12px; margin-top: 28px; }
+  h3:first-child { margin-top: 0; }
+
+  .list-box { background: #f7f7f7; border-left: 3px solid #ccc; padding: 16px 20px; border-radius: 0 6px 6px 0; margin: 8px 0 20px; }
+  .list-box ul { list-style: none; padding: 0; margin: 0; }
+  .list-box ul li { font-size: 15px; color: #555; line-height: 1.7; padding: 5px 0 5px 16px; position: relative; }
+  .list-box ul li::before { content: "-"; position: absolute; left: 0; color: #bbb; }
+
+  /* Mindset box */
+  .mindset-box { background: #f7f7f7; border-left: 3px solid #ccc; padding: 18px 22px; border-radius: 0 6px 6px 0; margin: 8px 0 20px; }
+  .mindset-row { display: flex; align-items: flex-start; gap: 12px; padding: 8px 0; border-bottom: 1px solid #eee; font-size: 15px; line-height: 1.6; }
+  .mindset-row:last-child { border-bottom: none; padding-bottom: 0; }
+  .mindset-icon { font-size: 16px; font-weight: 700; flex-shrink: 0; width: 20px; margin-top: 1px; }
+  .mindset-icon.cross { color: #c0392b; }
+  .mindset-icon.tick  { color: #27ae60; }
+  .mindset-text.cross { color: #888; text-decoration: line-through; }
+  .mindset-text.tick  { color: #333; }
+
+  .callout { background: #f5f0eb; border-left: 4px solid #e8552e; padding: 18px 22px; border-radius: 0 6px 6px 0; margin: 20px 0; }
+  .callout p { font-size: 15px; color: #444; margin: 0 0 8px; line-height: 1.7; }
+  .callout p:last-child { margin: 0; }
+  .callout .sidenote { font-size: 13px; color: #888; font-style: italic; }
+
+  .takeaway { background: #f5f0eb; border-left: 4px solid #e8552e; padding: 18px 22px; border-radius: 0 6px 6px 0; margin: 24px 0 0; }
+  .takeaway p { font-size: 15px; color: #444; margin: 0; }
+
+  .divider { border: none; border-top: 2px solid #f0f0f0; margin: 28px 0; }
+  .signoff p { font-size: 15px; color: #555; line-height: 1.7; }
+</style>
+  <!-- Auth Guard -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+  <script>
+    (async () => {
+      const db = window.supabase.createClient(
+        'https://zxuuyzhbryelekousbsw.supabase.co',
+        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inp4dXV5emhicnllbGVrb3VzYnN3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODE1NDE1MTcsImV4cCI6MjA5NzExNzUxN30.JPwlX_8KQ6DmQFur0B7jn8HUbrY9o0m43N4MGJgjdJY'
+      );
+      const { data: { session } } = await db.auth.getSession();
+      if (!session) { window.location.href = '/login.html'; return; }
+      const { data: profile } = await db.from('profiles').select('approved,is_admin').eq('id', session.user.id).single();
+      if (!profile?.approved && !profile?.is_admin) { window.location.href = '/dashboard.html'; }
+    })();
+  </script>
+</head>
+<body>
+
+<div class="topbar">
+  <span class="topbar-brand">GetFit AF</span>
+  <div class="topbar-right">
+    <span class="topbar-label">Your daily lesson</span>
+    <a href="https://learn.getfitaf.fitness" class="topbar-back">&#8592; Back to dashboard</a>
+  </div>
+</div>
+
+<div class="container">
+
+  <p class="lesson-meta">Lesson 11</p>
+  <h1 class="lesson-title">How to deal with difficult exercises</h1>
+
+  <div class="card">
+    <p>There will be certain exercises in your program that feel genuinely challenging - not just physically, but in terms of balance, coordination, and stability.</p>
+    <p>Some common examples:</p>
+
+    <div class="list-box">
+      <ul>
+        <li>Reverse lunges</li>
+        <li>Romanian deadlifts</li>
+        <li>Bulgarian split squats</li>
+      </ul>
+    </div>
+
+    <p>If any of these make you feel uncomfortable, or if you find yourself dreading them almost every session, there's usually a reason. Your strength might not quite be there yet for these movements. And with exercises like Bulgarian split squats and lunges, balance can be a frustrating obstacle if you haven't established it yet.</p>
+
+    <hr class="divider">
+
+    <p>All the aspects you're struggling with - balance, single-leg strength, stability - these aren't areas to avoid. They're areas to work on.</p>
+    <p>These are the exact things that build overall strength and functional capability that translates into your everyday life.</p>
+    <p>So instead of avoiding these exercises, do a less intense version.</p>
+
+    <hr class="divider">
+
+    <h3>How to modify</h3>
+    <p>For Bulgarian split squats specifically:</p>
+
+    <div class="list-box">
+      <ul>
+        <li>Set up beside a wall and hold it for balance</li>
+        <li>Hold a pole to your side - this gives you something to stabilise against</li>
+        <li>Reduce the weight, or do them with no weight at all</li>
+        <li>Hold a bench in front of you for support when pushing yourself back up</li>
+      </ul>
+    </div>
+
+    <p>The same principle applies to the others - reduce the complexity first, then build from there.</p>
+
+    <hr class="divider">
+
+    <h3>How to think about it</h3>
+
+    <div class="mindset-box">
+      <div class="mindset-row">
+        <span class="mindset-icon cross">✗</span>
+        <span class="mindset-text cross">"I hate this exercise."</span>
+      </div>
+      <div class="mindset-row">
+        <span class="mindset-icon tick">✓</span>
+        <span class="mindset-text tick">"How can I master this?"</span>
+      </div>
+      <div class="mindset-row">
+        <span class="mindset-icon tick">✓</span>
+        <span class="mindset-text tick">"What's a version I can tolerate right now that will eventually get me there?"</span>
+      </div>
+    </div>
+
+    <p>Keep an open mind. Almost every client who has pushed through modified versions of these exercises has come out the other side feeling glad they did.</p>
+    <p>I can assure you - it is almost always worth it to explore and work towards mastering these movements.</p>
+
+    <hr class="divider">
+
+    <div class="callout">
+      <p><strong>One important exception:</strong> if you feel extreme discomfort - and more importantly, if there is any pain while doing these exercises - don't push through it. Talk to your coach.</p>
+      <p class="sidenote">Side note: drop your coach a message if you want an easier version of any exercise - we're happy to adjust.</p>
+    </div>
+
+    <div class="takeaway">
+      <p><strong>Today's takeaway:</strong> Difficult exercises are usually the ones worth doing. Try a modified version, keep an open mind, and the goal is always progress - not perfection.</p>
+    </div>
+  </div>
+  <!-- Mark Complete -->
+  <div id="complete-wrap" style="background:#fff;border-radius:8px;padding:24px 32px;box-shadow:0 2px 8px rgba(0,0,0,0.07);display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:24px;">
+    <div>
+      <p style="font-size:15px;font-weight:700;color:#1a1a1a;margin-bottom:4px;">Done with today's lesson?</p>
+      <p style="font-size:13px;color:#888;margin:0;">Mark it complete so we can track your progress.</p>
+    </div>
+    <button id="complete-btn"
+      style="background:#e8552e;color:#fff;font-size:14px;font-weight:700;padding:12px 24px;border-radius:6px;border:none;cursor:pointer;white-space:nowrap;">
+      Mark as complete
+    </button>
+  </div>
+  <script>
+  (async () => {
+    const LESSON_ORDER = 11;
+    const _db = window.supabase.createClient('https://zxuuyzhbryelekousbsw.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inp4dXV5emhicnllbGVrb3VzYnN3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODE1NDE1MTcsImV4cCI6MjA5NzExNzUxN30.JPwlX_8KQ6DmQFur0B7jn8HUbrY9o0m43N4MGJgjdJY');
+    const { data: { session } } = await _db.auth.getSession();
+    if (!session) return;
+    const { data: lesson } = await _db.from('lessons').select('id').eq('order', LESSON_ORDER).single();
+    if (!lesson) return;
+    const lessonId = lesson.id;
+    const { data: progress } = await _db.from('user_progress')
+      .select('completed').eq('user_id', session.user.id).eq('lesson_id', lessonId).single();
+    if (progress && progress.completed) showDone();
+    document.getElementById('complete-btn').addEventListener('click', async () => {
+      const btn = document.getElementById('complete-btn');
+      btn.disabled = true; btn.textContent = '...';
+      await _db.from('user_progress').upsert(
+        { user_id: session.user.id, lesson_id: lessonId, completed: true, completed_at: new Date().toISOString() },
+        { onConflict: 'user_id,lesson_id' }
+      );
+      showDone();
+    });
+    function showDone() {
+      const btn = document.getElementById('complete-btn');
+      if (btn) btn.outerHTML = '<span style="color:#22c55e;font-weight:700;font-size:14px;">&#10003; Lesson complete!</span>';
+    }
+  })();
+  </script>
+
+  <div class="card signoff">
+    <p>Talk soon,<br><strong>Satish</strong><br><span style="color:#888;font-size:13px;">GetFit AF</span></p>
+  </div>
+
+</div>
+</body>
+</html>

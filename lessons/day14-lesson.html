@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lesson 14 - Your supplement guide: Multivitamin, creatine, and timing | GetFit AF</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Arial, sans-serif; background: #f2f2f2; color: #222; }
+
+  .topbar { background: #e8552e; padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; }
+  .topbar-brand { color: #fff; font-size: 20px; font-weight: 700; letter-spacing: -0.3px; }
+  .topbar-label { color: #ffd4c8; font-size: 13px; }
+  .topbar-right { text-align: right; }
+  .topbar-back { color: #ffd4c8; font-size: 11px; text-decoration: none; opacity: 0.85; display: block; margin-top: 4px; }
+  .topbar-back:hover { opacity: 1; }
+
+  .container { max-width: 680px; margin: 40px auto; padding: 0 20px 60px; }
+  .lesson-meta { font-size: 12px; font-weight: 700; color: #e8552e; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
+  .lesson-title { font-size: 28px; font-weight: 700; color: #1a1a1a; line-height: 1.25; margin-bottom: 32px; }
+
+  .card { background: #fff; border-radius: 8px; padding: 36px 40px; box-shadow: 0 2px 8px rgba(0,0,0,0.07); margin-bottom: 24px; }
+  p { font-size: 16px; line-height: 1.75; color: #333; margin-bottom: 18px; }
+  p:last-child { margin-bottom: 0; }
+  h3 { font-size: 18px; font-weight: 700; color: #1a1a1a; margin-bottom: 12px; margin-top: 28px; }
+  h3:first-child { margin-top: 0; }
+
+  .list-box { background: #f7f7f7; border-left: 3px solid #ccc; padding: 16px 20px; border-radius: 0 6px 6px 0; margin: 8px 0 20px; }
+  .list-box p { font-size: 15px; color: #555; margin-bottom: 10px; }
+  .list-box p:last-child { margin-bottom: 0; }
+  .list-box ul { list-style: none; padding: 0; margin: 0; }
+  .list-box ul li { font-size: 15px; color: #555; line-height: 1.7; padding: 5px 0 5px 16px; position: relative; }
+  .list-box ul li::before { content: "-"; position: absolute; left: 0; color: #bbb; }
+
+  .callout { background: #f5f0eb; border-left: 4px solid #e8552e; padding: 18px 22px; border-radius: 0 6px 6px 0; margin: 20px 0; }
+  .callout p { font-size: 15px; color: #444; margin: 0 0 10px; line-height: 1.7; }
+  .callout p:last-child { margin: 0; }
+  .callout a { color: #e8552e; font-weight: 700; text-decoration: none; }
+
+  .takeaway { background: #f5f0eb; border-left: 4px solid #e8552e; padding: 18px 22px; border-radius: 0 6px 6px 0; margin: 24px 0 0; }
+  .takeaway p { font-size: 15px; color: #444; margin: 0; }
+
+  .exception { font-size: 14px; color: #888; font-style: italic; line-height: 1.7; margin: 0 0 20px; }
+
+  .timing-row { display: flex; gap: 12px; padding: 10px 0; border-bottom: 1px solid #eee; font-size: 15px; line-height: 1.6; }
+  .timing-row:last-child { border-bottom: none; padding-bottom: 0; }
+  .timing-supp { font-weight: 700; color: #1a1a1a; min-width: 140px; flex-shrink: 0; }
+  .timing-detail { color: #555; }
+
+  .divider { border: none; border-top: 2px solid #f0f0f0; margin: 28px 0; }
+  .signoff p { font-size: 15px; color: #555; line-height: 1.7; }
+</style>
+  <!-- Auth Guard -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+  <script>
+    (async () => {
+      const db = window.supabase.createClient(
+        'https://zxuuyzhbryelekousbsw.supabase.co',
+        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inp4dXV5emhicnllbGVrb3VzYnN3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODE1NDE1MTcsImV4cCI6MjA5NzExNzUxN30.JPwlX_8KQ6DmQFur0B7jn8HUbrY9o0m43N4MGJgjdJY'
+      );
+      const { data: { session } } = await db.auth.getSession();
+      if (!session) { window.location.href = '/login.html'; return; }
+      const { data: profile } = await db.from('profiles').select('approved,is_admin').eq('id', session.user.id).single();
+      if (!profile?.approved && !profile?.is_admin) { window.location.href = '/dashboard.html'; }
+    })();
+  </script>
+</head>
+<body>
+
+<div class="topbar">
+  <span class="topbar-brand">GetFit AF</span>
+  <div class="topbar-right">
+    <span class="topbar-label">Your daily lesson</span>
+    <a href="https://learn.getfitaf.fitness" class="topbar-back">&#8592; Back to dashboard</a>
+  </div>
+</div>
+
+<div class="container">
+
+  <p class="lesson-meta">Lesson 14</p>
+  <h1 class="lesson-title">Your supplement guide - Part 3: Multivitamin, creatine, and when to take everything</h1>
+
+  <!-- Form reminder - top -->
+  <div class="callout">
+    <p><strong>Last reminder:</strong> If you haven't filled out the supplement questionnaire yet, please take 2 minutes to do it now. It's important for us to understand where you're starting from.</p>
+    <p><a href="https://forms.getfitaf.fitness/supplement-questionnaire">&#8594; Fill out the supplement questionnaire</a></p>
+  </div>
+
+  <div class="card">
+    <h3>Multivitamin</h3>
+    <p>Multivitamins have a bad reputation in the fitness world - and for good reason. Most of them pack in a huge list of ingredients but in doses too small to make a real difference. On top of that, some vitamins and minerals compete with each other for absorption, which means having too many of them together in one pill can actually limit how much your body absorbs.</p>
+    <p>That's why choosing your multivitamin well matters more than just buying one.</p>
+    <p>Here's a reference for what to look for on the label:</p>
+
+    <div class="list-box">
+      <p><strong>Vitamins:</strong></p>
+      <ul>
+        <li>Vitamin A - around 1,500 mcg</li>
+        <li>Vitamin D - 5 mcg</li>
+        <li>Vitamin E - 100 mg</li>
+        <li>Vitamin C - 250 mg</li>
+        <li>B1, B2, B3, B5, B6 - 25 mg each</li>
+        <li>B12 - 10 mcg</li>
+        <li>Folic acid - 50 mcg</li>
+        <li>Biotin</li>
+      </ul>
+      <p style="margin-top:12px;"><strong>Minerals:</strong></p>
+      <ul>
+        <li>Calcium - at least 150 mg</li>
+        <li>Magnesium - 75 mg</li>
+        <li>Iron - 10 mg</li>
+        <li>Zinc - 10 mg</li>
+        <li>Manganese - 2.5 mg</li>
+        <li>Chromium - 20 mcg</li>
+        <li>Selenium - 25 mcg</li>
+        <li>Ideally some vanadium, boron, and molybdenum</li>
+      </ul>
+    </div>
+
+    <p>You only have to do this research once - find the right multivitamin, and you can stick with it forever. It's worth taking the time to get this right.</p>
+
+    <h3>What to do if you can't find a perfect match</h3>
+    <p>Most brands don't have all of these in the right quantities - that's completely normal. Here's how to work around it:</p>
+
+    <div class="list-box">
+      <ul>
+        <li>Compare the label of your current multivitamin against the numbers above</li>
+        <li>If it's low on B vitamins, consider adding a B-complex supplement separately</li>
+        <li>If it's low on minerals, consider adding zinc and magnesium separately</li>
+        <li>If you're unsure, share the label with your coach - we'll help you figure out what to add</li>
+      </ul>
+    </div>
+
+    <p>One brand that comes closest to all of these levels is Solgar - but it's a US brand and not easily available in India. If you're able to order internationally, it's worth looking up. Otherwise, filling gaps with a few targeted supplements is the most reliable approach.</p>
+
+    <hr class="divider">
+
+    <h3>Creatine</h3>
+    <p>Creatine is one of the most underrated supplement you can add to your fitness journey.</p>
+    <p>Taking creatine consistently can help improve your strength levels in the gym, which indirectly contributes to better muscle growth and recovery. It also has cognitive benefits - sharper focus and reduced mental fatigue.</p>
+    <p>A lot of people avoid creatine because they worry about hair loss or kidney damage. There has been extensive research showing that creatine is very safe for most people. If you have a healthy, well-functioning body, there's no real cause for concern.</p>
+
+    <div class="list-box">
+      <p><strong>What to take:</strong> Creatine monohydrate. There are a lot of fancier versions being marketed, but your body absorbs monohydrate just as well. No need to spend more.</p>
+      <p><strong>How much:</strong> 3-5g per day, every single day.</p>
+      <p><strong>On the loading phase:</strong> Some people take 20-30g per day for the first week to saturate their muscles faster. This is common in bodybuilding circles, but for most of us it's not necessary - and it can lead to gastric issues. Just start with 3-5g daily and keep it consistent.</p>
+      <p><strong>When to expect results:</strong> You won't feel the benefits overnight. Strength improvements typically come around 20-30 days after you start. That's completely normal - just keep going.</p>
+      <p><strong>When to take it:</strong> Any time of day. It does have a slight edge if taken within 30 minutes of finishing your workout, but consistency matters far more than timing.</p>
+    </div>
+
+    <p class="exception">One exception: if you have underlying kidney issues, please check with your doctor before starting creatine.</p>
+
+    <hr class="divider">
+
+    <h3>When to take your supplements</h3>
+
+    <div class="list-box">
+      <div class="timing-row">
+        <span class="timing-supp">Whey protein</span>
+        <span class="timing-detail">Any time of day. If you're training on an empty stomach, having it beforehand gives a slight edge. There's no meaningful advantage to having it within one or two hours post-workout if you're eating well through the day - total intake matters far more than timing</span>
+      </div>
+      <div class="timing-row">
+        <span class="timing-supp">Omega-3</span>
+        <span class="timing-detail">With a meal that has fat in it; keep away from dairy or calcium-rich foods</span>
+      </div>
+      <div class="timing-row">
+        <span class="timing-supp">Vitamin D3</span>
+        <span class="timing-detail">With a meal that has fat in it</span>
+      </div>
+      <div class="timing-row">
+        <span class="timing-supp">Multivitamin</span>
+        <span class="timing-detail">With your first meal of the day; avoid late at night if it contains B vitamins and you have trouble sleeping</span>
+      </div>
+      <div class="timing-row">
+        <span class="timing-supp">Minerals (calcium, magnesium)</span>
+        <span class="timing-detail">In the evening - they can support sleep quality</span>
+      </div>
+      <div class="timing-row">
+        <span class="timing-supp">Creatine</span>
+        <span class="timing-detail">Any time, preferably at the same time every day - consistency is what matters</span>
+      </div>
+    </div>
+
+    <h3>The one rule that matters more than timing</h3>
+    <p>Take them every day. A supplement you take consistently at the "wrong" time does more for you than one you take at the "perfect" time three days a week.</p>
+    <p>Build it into something you already do - leave them next to your morning coffee, your breakfast, your toothbrush. Whatever makes it automatic.</p>
+    <p>And if you miss a day - just pick up tomorrow. Don't double-dose. One missed day changes nothing. It's the weeks-long gaps that matter.</p>
+
+    <div class="takeaway">
+      <p><strong>Today's takeaway:</strong> Timing is a bonus. Consistency is what actually matters. Find a simple routine that works for you and stick to it every day.</p>
+    </div>
+  </div>
+
+  <!-- Form reminder - bottom -->
+  <div class="callout">
+    <p>We hope this series has given you a clearer picture of what to take and why. If you haven't filled out the supplement questionnaire yet, we'd really appreciate it - it helps us understand your starting point and tailor your program from there.</p>
+    <p><a href="https://forms.getfitaf.fitness/supplement-questionnaire">&#8594; Fill out the questionnaire</a></p>
+  </div>
+  <!-- Mark Complete -->
+  <div id="complete-wrap" style="background:#fff;border-radius:8px;padding:24px 32px;box-shadow:0 2px 8px rgba(0,0,0,0.07);display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:24px;">
+    <div>
+      <p style="font-size:15px;font-weight:700;color:#1a1a1a;margin-bottom:4px;">Done with today's lesson?</p>
+      <p style="font-size:13px;color:#888;margin:0;">Mark it complete so we can track your progress.</p>
+    </div>
+    <button id="complete-btn"
+      style="background:#e8552e;color:#fff;font-size:14px;font-weight:700;padding:12px 24px;border-radius:6px;border:none;cursor:pointer;white-space:nowrap;">
+      Mark as complete
+    </button>
+  </div>
+  <script>
+  (async () => {
+    const LESSON_ORDER = 14;
+    const _db = window.supabase.createClient('https://zxuuyzhbryelekousbsw.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inp4dXV5emhicnllbGVrb3VzYnN3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODE1NDE1MTcsImV4cCI6MjA5NzExNzUxN30.JPwlX_8KQ6DmQFur0B7jn8HUbrY9o0m43N4MGJgjdJY');
+    const { data: { session } } = await _db.auth.getSession();
+    if (!session) return;
+    const { data: lesson } = await _db.from('lessons').select('id').eq('order', LESSON_ORDER).single();
+    if (!lesson) return;
+    const lessonId = lesson.id;
+    const { data: progress } = await _db.from('user_progress')
+      .select('completed').eq('user_id', session.user.id).eq('lesson_id', lessonId).single();
+    if (progress && progress.completed) showDone();
+    document.getElementById('complete-btn').addEventListener('click', async () => {
+      const btn = document.getElementById('complete-btn');
+      btn.disabled = true; btn.textContent = '...';
+      await _db.from('user_progress').upsert(
+        { user_id: session.user.id, lesson_id: lessonId, completed: true, completed_at: new Date().toISOString() },
+        { onConflict: 'user_id,lesson_id' }
+      );
+      showDone();
+    });
+    function showDone() {
+      const btn = document.getElementById('complete-btn');
+      if (btn) btn.outerHTML = '<span style="color:#22c55e;font-weight:700;font-size:14px;">&#10003; Lesson complete!</span>';
+    }
+  })();
+  </script>
+
+  <div class="card signoff">
+    <p>Talk soon,<br><strong>Satish</strong><br><span style="color:#888;font-size:13px;">GetFit AF</span></p>
+  </div>
+
+</div>
+  <script>
+  // Append user name+email to form links so forms are pre-filled
+  (async () => {
+    const _fdb = window.supabase.createClient('https://zxuuyzhbryelekousbsw.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inp4dXV5emhicnllbGVrb3VzYnN3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODE1NDE1MTcsImV4cCI6MjA5NzExNzUxN30.JPwlX_8KQ6DmQFur0B7jn8HUbrY9o0m43N4MGJgjdJY');
+    const { data: { session } } = await _fdb.auth.getSession();
+    if (!session) return;
+    const email = session.user.email || '';
+    const { data: profile } = await _fdb.from('profiles').select('full_name').eq('id', session.user.id).single();
+    const name = profile?.full_name || '';
+    if (!name && !email) return;
+    const params = new URLSearchParams();
+    if (name)  params.set('name',  name);
+    if (email) params.set('email', email);
+    document.querySelectorAll('a[href*="forms.getfitaf.fitness"]').forEach(a => {
+      const base = a.href.split('?')[0];
+      a.href = base + '?' + params.toString();
+    });
+  })();
+  </script>
+
+</body>
+</html>
